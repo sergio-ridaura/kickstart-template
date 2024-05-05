@@ -17,7 +17,7 @@ For versatile development of a wide range of websites and web applications, incl
 Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://github.com/) with this template.
 
 ```code
-git clone https://github.com/sergio-ridaura/starter-template
+git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
 Adapt the `README.md`, `LICENSE`, `docker-compose.yml` and `package.json` files to your needs.

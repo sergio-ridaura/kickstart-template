@@ -1,0 +1,37 @@
+{
+  "name": "kickstart-template",
+  "version": "1.0.0",
+  "description": "Kickstart template for my website developments.",
+  "keywords": [
+    "react",
+    "mysql",
+    "bash",
+    "cli",
+    "node",
+    "typescript",
+    "modules",
+    "astro",
+    "assemblyscript",
+    "tailwind"
+  ],
+  "author": {
+    "name": "Sergio Ridaura",
+    "url": "https://github.com/sergio-ridaura",
+    "email": "sergio.ridaura@outlook.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -R dist .astro;",
+    "dev": "astro dev --host",
+    "build": "npm run clean; astro check; astro build;",
+    "start": "HOST=0.0.0.0 PORT=80; astro preview --host --port 80",
+    "astro": "astro",
+    "update": "npm i @astrojs/check astro typescript"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "astro": "^4.7.1",
+    "typescript": "^5.4.5"
+  }
+}
