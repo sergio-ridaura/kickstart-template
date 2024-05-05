@@ -1,0 +1,44 @@
+services:
+
+  mysql:
+    image: mysql
+    container_name: kickstart-templete_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=sergio-ridaura
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=node
+    ports:
+      - 3306:3306
+    networks:
+      - network
+    restart: unless-stopped
+    tty: true
+
+  node:
+    depends_on:
+      - mysql
+    image: node
+    container_name: kickstart-templete_node
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=sergio-ridaura
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=node
+    ports:
+      - 80:80
+      - 8080:8080
+      - 3000:3000
+      - 4000:4000
+      - 4321:4321
+    networks:
+      - network
+    volumes:
+      - ./:/home/node
+    working_dir: /home/node/
+    restart: unless-stopped
+    tty: true
+
+networks:
+  network:
+    driver: bridge
