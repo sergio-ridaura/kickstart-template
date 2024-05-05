@@ -1,4 +1,4 @@
-# Kickstart template
+# Kickstart template v1.0.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -31,7 +31,7 @@ docker-compose up -d
 Access the [Node.js](https://nodejs.org/) container. For example:
 
 ```code
-docker exec -it starter-templete_node bash
+docker exec -it kickstart-templete_node bash
 ```
 
 Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
