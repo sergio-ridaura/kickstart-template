@@ -19,5 +19,8 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "cSpell.words": []
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "cSpell.words": [],
 }
