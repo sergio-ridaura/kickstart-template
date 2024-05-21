@@ -1,4 +1,4 @@
-# Kickstart template v1.0.0
+# Kickstart template v1.1.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -46,6 +46,12 @@ Add project dependencies.
 
 ```code
 npm install
+```
+
+If necessary, repair the user's permissions.
+
+```console
+sudo chown -R $USER .
 ```
 
 ## Develop

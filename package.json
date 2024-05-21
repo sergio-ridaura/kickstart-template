@@ -1,6 +1,6 @@
 {
   "name": "kickstart-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kickstart template for my website developments.",
   "keywords": [
     "react",
@@ -27,11 +27,13 @@
     "build": "npm run clean; astro check; astro build;",
     "start": "HOST=0.0.0.0 PORT=80; astro preview --host --port 80",
     "astro": "astro",
-    "update": "npm i @astrojs/check astro typescript"
+    "update": "npm i @astrojs/check @astrojs/tailwind astro tailwindcss typescript"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "astro": "^4.7.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.8.6",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }
 }
