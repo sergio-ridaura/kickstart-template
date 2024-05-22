@@ -2,7 +2,7 @@ import colors from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,css}"],
   theme: {
     extend: {
       fontFamily: {
@@ -11,8 +11,10 @@ export default {
       colors: {
         transparent: colors.transparent,
         current: colors.current,
-        light: colors.white,
-        dark: colors.black,
+        bg_light: colors.white,
+        bg_dark: colors.black,
+        tx_light: colors.black,
+        tx_dark: colors.white,
         black: colors.black,
         white: colors.white,
         gray: colors.gray,
