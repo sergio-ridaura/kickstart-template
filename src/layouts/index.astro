@@ -27,5 +27,20 @@ const { lang, title, author, description, keywords, image } = Astro.props;
 >
   <DefaultHeaderLayout />
   <slot />
-  <DefaultFooterLayout />
+  <DefaultFooterLayout
+    links={[
+      {
+        title: "First",
+        url: "/first",
+      },
+      {
+        title: "Second",
+        url: "/second",
+      },
+      {
+        title: "Third",
+        url: "/third",
+      },
+    ]}
+  />
 </DefaultHeadLayout>

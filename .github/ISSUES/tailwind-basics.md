@@ -7,7 +7,7 @@ assignees: sergio-ridaura
 project: kickstart-template
 milestone: Tailwind CSS initialization
 status: backlog
-efforts: 2
+efforts: 4
 startDate: 2024-05-21
 dueDate: 2024-05-21
 endDate: 2024-05-21
