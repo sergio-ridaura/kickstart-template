@@ -1,3 +1,3 @@
-import DefaultHeaderLayout from "./default.astro";
+import ColorsHeaderLayout from "./colors.astro";
 
-export { DefaultHeaderLayout };
+export { ColorsHeaderLayout };

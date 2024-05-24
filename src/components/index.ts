@@ -1,15 +1,17 @@
+import { randomArray } from "./array";
 import { getFormattedDate } from "./date";
 import {
-  DefaultFooterLayout,
-  DefaultHeaderLayout,
   DefaultHeadLayout,
+  ColorsHeaderLayout,
+  ColorsFooterLayout,
 } from "./layouts";
 import { getYear } from "./year";
 
 export {
-  getFormattedDate,
-  DefaultHeaderLayout,
+  ColorsFooterLayout,
+  ColorsHeaderLayout,
   DefaultHeadLayout,
-  DefaultFooterLayout,
+  getFormattedDate,
   getYear,
+  randomArray,
 };

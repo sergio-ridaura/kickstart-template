@@ -1,3 +1,3 @@
-import DefaultFooterLayout from "./default.astro";
+import ColorsFooterLayout from "./colors.astro";
 
-export { DefaultFooterLayout };
+export { ColorsFooterLayout };

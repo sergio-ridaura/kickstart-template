@@ -1,5 +1,5 @@
-import { DefaultFooterLayout } from "./footers";
-import { DefaultHeaderLayout } from "./headers";
 import { DefaultHeadLayout } from "./heads";
+import { ColorsHeaderLayout } from "./headers";
+import { ColorsFooterLayout } from "./footers";
 
-export { DefaultFooterLayout, DefaultHeaderLayout, DefaultHeadLayout };
+export { DefaultHeadLayout, ColorsHeaderLayout, ColorsFooterLayout };

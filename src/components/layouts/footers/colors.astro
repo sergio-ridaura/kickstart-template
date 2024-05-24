@@ -1,6 +1,6 @@
 ---
 import pkg from "@/../package.json";
-import { getYear } from "../..";
+import { getYear, randomArray } from "../..";
 
 interface Link {
   title: string;
@@ -8,7 +8,6 @@ interface Link {
 }
 
 interface Props {
-  lang?: string;
   author?: string;
   links?: Link[];
   color?:
@@ -21,19 +20,36 @@ interface Props {
     | "yellow"
     | "orange"
     | "pink"
-    | "purple";
+    | "purple"
+    | "random";
 }
 
-const {
-  lang = pkg.lang,
-  author = pkg.author.name,
-  links,
-  color = "gray",
-} = Astro.props;
+const { author = pkg.author.name, links, color = "random" } = Astro.props;
 
-const hrClass = `my-10 border-${color}-500`;
-const pClass = `text-sm text-${color}-400`;
-const linkClass = `mx-2 text-sm text-${color}-400 transition-colors duration-300 hover:text-${color}-500`;
+let selectColor;
+
+if (color === "random") {
+  const colors = [
+    "gray",
+    "red",
+    "green",
+    "blue",
+    "cyan",
+    "magenta",
+    "yellow",
+    "orange",
+    "pink",
+    "purple",
+  ];
+
+  selectColor = randomArray(colors);
+} else {
+  selectColor = color;
+}
+
+const hrClass = `border-${selectColor}-500`;
+const pClass = `text-${selectColor}-400`;
+const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
 
 /* const tailwind = [
   "border-gray-500 text-gray-400 text-gray-500 hover:text-gray-500",
@@ -50,20 +66,25 @@ const linkClass = `mx-2 text-sm text-${color}-400 transition-colors duration-300
 ---
 
 <footer>
-  <div class="container py-8 mx-auto">
-    <hr class={hrClass} />
+  <div class="container py-6 mx-auto">
+    <hr class={`my-8 ${hrClass}`} />
 
     <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-      <p class={pClass}>
-        © Copyright {getYear()}. {author} All Rights Reserved.
+      <p class={`mt-4 ${pClass}`}>
+        © Copyright {getYear()}. {author}.
       </p>
 
-      <div class="flex mt-3 -mx-2 sm:mt-0">
+      <div class="flex mt-4">
         {
           links &&
             links.length > 0 &&
             links.map((link) => (
-              <a href={link.url} aria-label={link.title} class={linkClass}>
+              <a
+                href={link.url}
+                aria-label={link.title}
+                class={`mx-2 ${linkClass} transition-colors duration-300`}
+                data-astro-prefetch
+              >
                 {link.title}
               </a>
             ))

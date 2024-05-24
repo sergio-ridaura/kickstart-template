@@ -1,12 +1,11 @@
 ---
 import {
   DefaultHeadLayout,
-  DefaultHeaderLayout,
-  DefaultFooterLayout,
+  ColorsHeaderLayout,
+  ColorsFooterLayout,
 } from "@/components/";
 
 interface Props {
-  lang?: string;
   title?: string;
   author?: string;
   description?: string;
@@ -14,32 +13,50 @@ interface Props {
   image?: string;
 }
 
-const { lang, title, author, description, keywords, image } = Astro.props;
+const { title, author, description, keywords, image } = Astro.props;
 ---
 
 <DefaultHeadLayout
-  lang={lang}
   title={title}
   author={author}
   description={description}
   keywords={keywords}
   image={image}
 >
-  <DefaultHeaderLayout />
-  <slot />
-  <DefaultFooterLayout
+  <ColorsHeaderLayout
     links={[
       {
-        title: "First",
-        url: "/first",
+        title: "About",
+        url: "/about",
       },
       {
-        title: "Second",
-        url: "/second",
+        title: "Documentation",
+        url: "/documentation",
       },
       {
-        title: "Third",
-        url: "/third",
+        title: "Contact",
+        url: "/contact",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/sergio-ridaura/kickstart-template",
+      },
+    ]}
+  />
+  <slot />
+  <ColorsFooterLayout
+    links={[
+      {
+        title: "Privacy policy",
+        url: "/privacy-policy",
+      },
+      {
+        title: "About",
+        url: "/about",
+      },
+      {
+        title: "Contact",
+        url: "/contact",
       },
     ]}
   />
