@@ -1,10 +1,11 @@
 ---
-import pkg from "../../package.json";
-
-const developer = `${pkg.author.name} ${pkg.author.url} ${pkg.author.email}`;
+import {
+  DefaultHeadLayout,
+  ColorsHeaderLayout,
+  ColorsFooterLayout,
+} from "@/components/";
 
 interface Props {
-  lang?: string;
   title?: string;
   author?: string;
   description?: string;
@@ -12,57 +13,51 @@ interface Props {
   image?: string;
 }
 
-const {
-  lang = pkg.lang,
-  title = pkg.title,
-  author = developer,
-  description = pkg.description,
-  keywords = pkg.keywords.join(", "),
-  image = "/images/default-placeholder.jpg",
-} = Astro.props;
-
-const socialImageURL = new URL(image, Astro.url);
+const { title, author, description, keywords, image } = Astro.props;
 ---
 
-<!doctype html>
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
-    <meta name="version" content={pkg.version} />
-    <meta name="author" content={author} />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="developer" content={developer} />
-    <meta
-      name="template"
-      content="https://github.com/sergio-ridaura/kickstart-template"
-    />
-    <meta
-      name="build"
-      content={String(new Date().toLocaleDateString("en-US"))}
-    />
-    <meta name="robots" content="index, follow" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
-
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={socialImageURL} />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImageURL} />
-  </head>
-  <body>
-    <slot />
-  </body>
-</html>
+<DefaultHeadLayout
+  title={title}
+  author={author}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <ColorsHeaderLayout
+    links={[
+      {
+        title: "About",
+        url: "/about",
+      },
+      {
+        title: "Documentation",
+        url: "/documentation",
+      },
+      {
+        title: "Contact",
+        url: "/contact",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/sergio-ridaura/kickstart-template",
+      },
+    ]}
+  />
+  <slot />
+  <ColorsFooterLayout
+    links={[
+      {
+        title: "Privacy policy",
+        url: "/privacy-policy",
+      },
+      {
+        title: "About",
+        url: "/about",
+      },
+      {
+        title: "Contact",
+        url: "/contact",
+      },
+    ]}
+  />
+</DefaultHeadLayout>

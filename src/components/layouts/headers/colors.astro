@@ -1,0 +1,165 @@
+---
+import pkg from "@/../package.json";
+import { randomArray } from "../..";
+
+interface Link {
+  title: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  links?: Link[];
+  color?:
+    | "gray"
+    | "red"
+    | "green"
+    | "blue"
+    | "cyan"
+    | "magenta"
+    | "yellow"
+    | "orange"
+    | "pink"
+    | "purple"
+    | "random";
+}
+
+const { title = pkg.title, links, color = "random" } = Astro.props;
+
+let selectColor;
+
+if (color === "random") {
+  const colors = [
+    "gray",
+    "red",
+    "green",
+    "blue",
+    "cyan",
+    "magenta",
+    "yellow",
+    "orange",
+    "pink",
+    "purple",
+  ];
+
+  selectColor = randomArray(colors);
+} else {
+  selectColor = color;
+}
+
+const titleClass = `text-${selectColor}-500`;
+const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+const hrClass = `border-${selectColor}-500`;
+const buttonMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+
+/* const tailwind = [
+  "border-gray-500 text-gray-400 text-gray-500 hover:text-gray-500",
+  "border-red-500 text-red-400 text-red-500 hover:text-red-500",
+  "border-green-500 text-green-400 text-green-500 hover:text-green-500",
+  "border-blue-500 text-blue-400 text-blue-500 hover:text-blue-500",
+  "border-cyan-500 text-cyan-400 text-cyan-500 hover:text-cyan-500",
+  "border-magenta-500 text-magenta-400 text-magenta-500 hover:text-magenta-500",
+  "border-yellow-500 text-yellow-400 text-yellow-500 hover:text-yellow-500",
+  "border-orange-500 text-orange-400 text-orange-500 hover:text-orange-500",
+  "border-pink-500 text-pink-400 text-pink-500 hover:text-pink-500",
+  "border-purple-500 text-purple-400 text-purple-500 hover:text-purple-500",
+];*/
+---
+
+<header>
+  <nav>
+    <div class="container py-3 mx-auto">
+      <div class="relative flex h-16 items-center">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <button
+            type="button"
+            class={`relative inline-flex items-center justify-center rounded-md p-4 ${buttonMobileClass}`}
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="mobile-menu"
+            onclick="toggleMenu()"
+          >
+            <span class="absolute -inset-0.5"></span>
+            <svg
+              class="block h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+        >
+          <a href="/" aria-label={title} data-astro-prefetch>
+            <p class={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}>{title}</p>
+          </a>
+        </div>
+        <div class="relative ml-3">
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-1">
+              {
+                links &&
+                  links.length > 0 &&
+                  links.map((link) => (
+                    <a
+                      href={link.url}
+                      aria-label={link.title}
+                      class={`px-0 py-1 ${linkClass} transition-colors duration-300`}
+                      data-astro-prefetch
+                    >
+                      <p
+                        class={`px-2 py-1 inline-block border border-transparent ${linkClass}`}
+                      >
+                        {link.title}
+                      </p>
+                    </a>
+                  ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class={`pb-2 ${hrClass}`} />
+    </div>
+
+    <div class="sm:hidden hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3">
+        {
+          links &&
+            links.length > 0 &&
+            links.map((link) => (
+              <a
+                href={link.url}
+                aria-label={link.title}
+                class={`block px-2 py-1 transition-colors duration-300`}
+                data-astro-prefetch
+              >
+                <p
+                  class={`px-2 py-1 inline-block border border-transparent ${likMobileClass}`}
+                >
+                  {link.title}
+                </p>
+              </a>
+            ))
+        }
+      </div>
+      <hr class={`pb-6 ${hrClass}`} />
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    menu?.classList.toggle("hidden");
+  }
+</script>
