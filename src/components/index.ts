@@ -1,11 +1,9 @@
-import { randomArray } from "./array";
+import { ColorsFooterLayout } from "./footers";
+import { ColorsHeaderLayout } from "./headers";
+import { DefaultHeadLayout } from "./heads";
 import { getFormattedDate } from "./date";
-import {
-  DefaultHeadLayout,
-  ColorsHeaderLayout,
-  ColorsFooterLayout,
-} from "./layouts";
 import { getYear } from "./year";
+import { randomArray } from "./array";
 
 export {
   ColorsFooterLayout,

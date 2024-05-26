@@ -1,6 +1,6 @@
 ---
-import pkg from "@/../package.json";
-import { randomArray } from "../..";
+import pkg from "@/package.json";
+import { randomArray } from "..";
 
 interface Link {
   title: string;
@@ -100,7 +100,9 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
           <a href="/" aria-label={title} data-astro-prefetch>
-            <p class={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}>{title}</p>
+            <p class={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}>
+              {title}
+            </p>
           </a>
         </div>
         <div class="relative ml-3">

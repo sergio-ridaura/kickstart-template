@@ -1,4 +1,4 @@
-# Kickstart template v1.2.0
+# Kickstart template v1.3.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -20,7 +20,7 @@ Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://githu
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Adapt the `README.md`, `LICENSE`, `docker-compose.yml` and `package.json` files to your needs.
+Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, and `.env` files to your needs.
 
 Start the container with [Docker Compose](https://docs.docker.com/compose/).
 
@@ -63,6 +63,16 @@ npm run dev
 ```
 
 Visit the page http://localhost:4321/ to see the result.
+
+## Deploy
+
+Clone the project with [Git](https://git-scm.com/), for example:
+
+```code
+git clone https://github.com/sergio-ridaura/kickstart-template
+```
+
+Adapt the `.env`, `astro.config.mjs` and `src/pages/manifest.json.ts` files to your site.
 
 Build the application.
 
