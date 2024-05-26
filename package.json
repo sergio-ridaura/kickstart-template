@@ -26,9 +26,9 @@
   "scripts": {
     "clean": "rm -R dist .astro;",
     "dev": "astro dev --host",
-    "build": "npm run clean; astro check; astro build;",
-    "start": "HOST=0.0.0.0 PORT=80; astro preview --host --port 80",
-    "astro": "astro",
+    "build": "npm run clean; astro telemetry disable; astro check; astro build;",
+    "preview": "HOST=0.0.0.0 PORT=8080; astro preview --host --port 8080",
+    "start": "",
     "update": "npm i @astrojs/check @astrojs/tailwind astro tailwindcss typescript"
   },
   "dependencies": {
