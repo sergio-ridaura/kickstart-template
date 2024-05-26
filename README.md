@@ -1,4 +1,4 @@
-# Kickstart template v1.2.0
+# Kickstart template v1.3.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -20,7 +20,7 @@ Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://githu
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Adapt the `README.md`, `LICENSE`, `docker-compose.yml` and `package.json` files to your needs.
+Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, and `.env` files to your needs.
 
 Start the container with [Docker Compose](https://docs.docker.com/compose/).
 
@@ -64,6 +64,56 @@ npm run dev
 
 Visit the page http://localhost:4321/ to see the result.
 
+## Preview
+
+Build the application.
+
+```console
+npm run build
+```
+
+Run the built application.
+
+```console
+npm run preview
+```
+
+Visit the page https://localhost/ to see the result.
+
+## Docker`s Ngnix
+
+Build the application.
+
+```console
+npm run build
+```
+
+Visit the page http://localhost/ to see the result.
+
+## Deploy
+
+Clone the project with [Git](https://git-scm.com/), for example:
+
+```code
+git clone https://github.com/sergio-ridaura/kickstart-template
+```
+
+Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
+
+```code
+npm update -g npm
+npm install -g n
+n lts
+```
+
+Add project dependencies.
+
+```code
+npm install
+```
+
+Adapt the `.env`, `astro.config.mjs` and `src/pages/manifest.json.ts` files to your site.
+
 Build the application.
 
 ```console
@@ -76,7 +126,7 @@ Run the built application.
 npm run start
 ```
 
-Visit the page http://localhost/ to see the result.
+Visit the page to see the result, for example: http://localhost/.
 
 ## Author
 

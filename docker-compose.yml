@@ -18,13 +18,19 @@ services:
   node:
     depends_on:
       - mysql
-    image: node
+    build:
+      context: .
+      args:
+        PUBLIC_DOMAIN: ${PUBLIC_DOMAIN}
+        PUBLIC_EMAIL: ${PUBLIC_EMAIL}
     container_name: kickstart-templete_node
     environment:
-      - MYSQL_HOST=mysql
-      - MYSQL_USER=sergio-ridaura
-      - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=node
+      - PUBLIC_DOMAIN=${PUBLIC_DOMAIN}
+      - PUBLIC_EMAIL=${PUBLIC_EMAIL}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
     ports:
       - 80:80
       - 8080:8080
