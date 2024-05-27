@@ -1,10 +1,11 @@
 import type { APIRoute } from "astro";
+import "dotenv/config";
 
 const robotsTxt = `
 User-agent: *
 Allow: /
 
-Sitemap: ${new URL("sitemap-index.xml", import.meta.env.PUBLIC_SITE).href}
+Sitemap: ${new URL("sitemap-index.xml", process.env.PUBLIC_SITE).href}
 `.trim();
 
 export const GET: APIRoute = () => {
