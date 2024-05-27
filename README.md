@@ -128,6 +128,27 @@ npm run start
 
 Visit the page to see the result, for example: http://localhost/.
 
+## Deploy in Netlify
+
+Make sure the `package.json` file has the script like this:
+
+```json
+"build": "npm run build:server;",
+```
+
+Or add the global variable:
+
+```json
+PUBLIC_ADAPTER=server
+```
+
+Add environment variables before building the website. Edit and use the following variables:
+
+```console
+PUBLIC_BACKGROUND_COLOR=#ffffff
+PUBLIC_THEME_COLOR=#000000
+```
+
 ## Deploy in Vercel
 
 Make sure the `package.json` file has the script like this:
@@ -141,6 +162,8 @@ Or add the global variable:
 ```json
 PUBLIC_ADAPTER=vercel
 ```
+
+Add environment variables before building the website
 
 ## Author
 
