@@ -24,18 +24,21 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -R dist .astro;",
+    "clean": "rm -R dist .astro .vercel;",
     "dev": "astro dev --host",
-    "build": "npm run clean; astro check; astro build;",
-    "preview": "HOST=0.0.0.0 PORT=8080; astro preview --host --port 8080",
+    "build": "npm run clean; astro telemetry disable; astro check; PUBLIC_ADAPTER=vercel astro build;",
+    "build:server": "npm run clean; astro telemetry disable; astro check; astro build;",
+    "preview:server": "astro preview --host --port 8080",
     "start": "",
-    "update": "npm i @astrojs/check @astrojs/tailwind astro tailwindcss typescript"
+    "update": "npm i @astrojs/check @astrojs/tailwind astro tailwindcss typescript @astrojs/vercel"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.6.0",
     "astro": "^4.9.1",
+    "dotenv": "^16.4.5",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }

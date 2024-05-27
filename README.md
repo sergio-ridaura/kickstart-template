@@ -69,13 +69,13 @@ Visit the page http://localhost:4321/ to see the result.
 Build the application.
 
 ```console
-npm run build
+npm run build:server
 ```
 
 Run the built application.
 
 ```console
-npm run preview
+npm run preview:server
 ```
 
 Visit the page https://localhost/ to see the result.
@@ -85,7 +85,7 @@ Visit the page https://localhost/ to see the result.
 Build the application.
 
 ```console
-npm run build
+npm run build:server
 ```
 
 Visit the page http://localhost/ to see the result.
@@ -117,7 +117,7 @@ Adapt the `.env`, `astro.config.mjs` and `src/pages/manifest.json.ts` files to y
 Build the application.
 
 ```console
-npm run build
+npm run build:server
 ```
 
 Run the built application.

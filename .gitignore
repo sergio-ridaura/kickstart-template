@@ -2,6 +2,7 @@
 .DS_Store
 .env
 .env.production
+.vercel
 dist/
 node_modules/
 npm-debug.log*
