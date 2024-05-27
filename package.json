@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Kickstart template for my website developments.",
   "lang": "en",
   "keywords": [
@@ -26,15 +26,14 @@
   "scripts": {
     "clean": "rm -R dist .astro .vercel;",
     "dev": "astro dev --host",
-    "build": "npm run build:server;",
-    "build:vercel": "npm run clean; astro telemetry disable; astro check; PUBLIC_ADAPTER=vercel astro build;",
-    "build:server": "npm run clean; astro telemetry disable; astro check; astro build;",
-    "preview:server": "astro preview --host --port 8080",
-    "start": "",
-    "update": "npm i @astrojs/check @astrojs/tailwind astro tailwindcss typescript @astrojs/vercel"
+    "build": "npm run clean; astro telemetry disable; astro check; export $(cat .env.runtime) && export $(cat .env.prod) && astro build;",
+    "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 node ./dist/server/entry.mjs",
+    "start": "npm run preview",
+    "update": "npm i @astrojs/check @astrojs/node @astrojs/sitemap @astrojs/tailwind @astrojs/vercel astro dotenv tailwindcss typescript"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.5",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.6.0",
