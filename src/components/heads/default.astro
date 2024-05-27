@@ -2,7 +2,6 @@
 import { ViewTransitions } from "astro:transitions";
 import pkg from "@/package.json";
 import { getFormattedDate } from "..";
-import "dotenv/config";
 
 const developer = `${pkg.author.name} ${pkg.author.url} ${pkg.author.email}`;
 
@@ -51,9 +50,9 @@ const socialImageURL = new URL(image, Astro.url);
     <meta name="robots" content="index, follow" />
     <meta
       name="background_color"
-      content=`${process.env.PUBLIC_BACKGROUND_COLOR}`
+      content=`${import.meta.env.PUBLIC_BACKGROUND_COLOR}`
     />
-    <meta name="theme-color" content=`${process.env.PUBLIC_THEME_COLOR}` />
+    <meta name="theme-color" content=`${import.meta.env.PUBLIC_THEME_COLOR}` />
     <ViewTransitions />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />

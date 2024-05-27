@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import pkg from "@/package.json";
-import "dotenv/config";
 
 const manifestTxt = `{
   "name": "${pkg.title}",
@@ -8,8 +7,8 @@ const manifestTxt = `{
   "description": "${pkg.description}",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "${process.env.PUBLIC_BACKGROUND_COLOR}",
-  "theme_color": "${process.env.PUBLIC_THEME_COLOR}",
+  "background_color": "${import.meta.env.PUBLIC_BACKGROUND_COLOR}",
+  "theme_color": "${import.meta.env.PUBLIC_THEME_COLOR}",
   "orientation": "portrait-primary",
   "icons": [
     {
