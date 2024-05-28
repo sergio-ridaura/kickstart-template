@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Kickstart template for my website developments.",
   "lang": "en",
   "keywords": [
@@ -24,15 +24,16 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -R dist .astro .vercel;",
+    "clean": "rm -R dist .astro .vercel .netlify;",
     "dev": "astro dev --host",
-    "build": "npm run clean; astro telemetry disable; astro check; export $(cat .env.runtime) && export $(cat .env.prod) && astro build;",
+    "build": "npm run clean; astro telemetry disable; astro check; export $(cat .env.prod) && astro build;",
     "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 node ./dist/server/entry.mjs",
     "start": "npm run preview",
-    "update": "npm i @astrojs/check @astrojs/node @astrojs/sitemap @astrojs/tailwind @astrojs/vercel astro dotenv tailwindcss typescript"
+    "update": "npm i @astrojs/check @astrojs/netlify @astrojs/node @astrojs/sitemap @astrojs/tailwind @astrojs/vercel astro dotenv tailwindcss typescript"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/netlify": "^5.2.1",
     "@astrojs/node": "^8.2.5",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",

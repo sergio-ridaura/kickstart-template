@@ -1,4 +1,4 @@
-# Kickstart template v1.4.0
+# Kickstart template v1.4.1
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -102,7 +102,7 @@ Add project dependencies.
 npm install
 ```
 
-Adapt the `.env` file to your site.
+Adapt the `.env.prod` file to your site, with the public variables.
 
 ```console
 PUBLIC_SITE=https://localhost
@@ -111,6 +111,8 @@ PUBLIC_ADAPTER=server
 PUBLIC_BACKGROUND_COLOR="#ffffff"
 PUBLIC_THEME_COLOR="#000000"
 ```
+
+Adapt the `.env` file to your site, with the private variables.
 
 Build the application.
 
@@ -128,19 +130,21 @@ Visit the page to see the result, for example: http://localhost/.
 
 ## Deploy in Netlify
 
-Adapt the `.env` file to your site.
+Adapt the `.env.prod` file to your site, with the public variables.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.netlify.app
 PUBLIC_DOMAIN=kickstart-template-demo.netlify.app
-PUBLIC_ADAPTER=server
+PUBLIC_ADAPTER=netlify
 PUBLIC_BACKGROUND_COLOR=#ffffff
 PUBLIC_THEME_COLOR=#000000
 ```
 
+Private environment variables must be managed from the [Netlity](https://www.netlify.com/) tools.
+
 ## Deploy in Vercel
 
-Adapt the `.env` file to your site.
+Adapt the `.env.prod` file to your site, with the public variables.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
@@ -149,6 +153,8 @@ PUBLIC_ADAPTER=vercel
 PUBLIC_BACKGROUND_COLOR="#ffffff"
 PUBLIC_THEME_COLOR="#000000"
 ```
+
+Private environment variables must be managed from the [Vercel](https://vercel.com/) tools.
 
 ## Author
 
