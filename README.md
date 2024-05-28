@@ -69,7 +69,7 @@ Visit the page http://localhost:4321/ to see the result.
 Build the application.
 
 ```console
-npm run build
+npm run build:local
 ```
 
 Run the built application.

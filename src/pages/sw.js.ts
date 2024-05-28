@@ -4,14 +4,17 @@ import pkg from "@/package.json";
 
 const serviceWorker = `
 self.addEventListener("install", (event) => {
-    event.waitUntil(
-      caches.open("${pkg.version}").then((cache) => {
-        return cache.addAll([
-          "/about/index.html",
-          "/contact/index.html",
+  event.waitUntil(
+    caches.open("${pkg.version}").then((cache) => {
+      return cache.addAll(
+        [
+          "/",
+          "/about/",
+          "/contact/",
+          "/documentation/",
+          "/privacy-policy/",
           "/css/fonts.css",
           "/css/styles.css",
-          "/documentation/index.html",
           "/fonts/Atkinson-Hyperlegible-Bold-102.eot",
           "/fonts/Atkinson-Hyperlegible-Bold-102.svg",
           "/fonts/Atkinson-Hyperlegible-Bold-102.ttf",
@@ -43,9 +46,7 @@ self.addEventListener("install", (event) => {
           "/images/icon-512x512.png",
           "/images/screenshot1.png",
           "/images/screenshot2.png",
-          "/privacy-policy/index.html",
           "/favicon.svg",
-          "/index.html",
           "/manifest.json",
           "/robots.txt",
           "/sitemap-0.xml",
