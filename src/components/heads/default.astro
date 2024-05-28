@@ -3,7 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import pkg from "@/package.json";
 import { getFormattedDate } from "..";
 
-const developer = `${pkg.author.name} ${pkg.author.url} ${pkg.author.email}`;
+const developer = `${import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name} ${import.meta.env.PUBLIC_AUTHOR_URL || pkg.author.url} ${import.meta.env.PUBLIC_AUTHOR_EMAIL || pkg.author.email}`;
 
 interface Props {
   lang?: string;
@@ -15,11 +15,11 @@ interface Props {
 }
 
 const {
-  lang = pkg.lang,
-  title = pkg.title,
+  lang = import.meta.env.PUBLIC_LANG || pkg.lang,
+  title = import.meta.env.PUBLIC_TITLE || pkg.title,
   author = developer,
-  description = pkg.description,
-  keywords = pkg.keywords.join(", "),
+  description = import.meta.env.PUBLIC_DESCRIPTION || pkg.description,
+  keywords = import.meta.env.PUBLIC_AUTHOR_KEYWORDS || pkg.keywords.join(", "),
   image = "/images/default-placeholder.jpg",
 } = Astro.props;
 

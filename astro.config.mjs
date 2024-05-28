@@ -5,44 +5,28 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/serverless";
 import node from "@astrojs/node";
 import netlify from "@astrojs/netlify";
+import mdx from "@astrojs/mdx";
 
-const site = "https://kickstart-template-demo.vercel.app/";
-
-let conf = {
-  site,
+const conf = {
+  site: process.env.PUBLIC_SITE,
   prefetch: true,
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), mdx()],
   devToolbar: {
     enabled: false,
   },
-  output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
 };
 
 if (process.env.PUBLIC_ADAPTER === "vercel") {
-  conf = {
-    site: process.env.PUBLIC_SITE,
-    prefetch: true,
-    integrations: [tailwind(), sitemap()],
-    devToolbar: {
-      enabled: false,
-    },
-    output: "server",
-    adapter: vercel(),
-  };
+  conf.output = "server";
+  conf.adapter = vercel();
 } else if (process.env.PUBLIC_ADAPTER === "netlify") {
-  conf = {
-    site: process.env.PUBLIC_SITE,
-    prefetch: true,
-    integrations: [tailwind(), sitemap()],
-    devToolbar: {
-      enabled: false,
-    },
-    output: "server",
-    adapter: netlify(),
-  };
+  conf.output = "server";
+  conf.adapter = netlify();
+} else {
+  conf.output = "server";
+  conf.adapter = node({
+    mode: "standalone",
+  });
 }
 
 export default defineConfig(conf);

@@ -3,9 +3,9 @@ import type { APIRoute } from "astro";
 import pkg from "@/package.json";
 
 const manifestTxt = `{
-  "name": "${pkg.title}",
-  "short_name": "${pkg.title}",
-  "description": "${pkg.description}",
+  "name": "${import.meta.env.PUBLIC_TITLE || pkg.title}",
+  "short_name": "${import.meta.env.PUBLIC_TITLE || pkg.title}",
+  "description": "${import.meta.env.PUBLIC_DESCRIPTION || pkg.description}",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "${import.meta.env.PUBLIC_BACKGROUND_COLOR}",

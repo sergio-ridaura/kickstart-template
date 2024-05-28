@@ -24,7 +24,7 @@ interface Props {
     | "random";
 }
 
-const { author = pkg.author.name, links, color = "random" } = Astro.props;
+const { author = import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name, links, color = "random" } = Astro.props;
 
 let selectColor;
 
