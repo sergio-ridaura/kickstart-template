@@ -1,4 +1,4 @@
-# Kickstart template v1.3.2
+# Kickstart template v1.4.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -16,7 +16,7 @@ For versatile development of a wide range of websites and web applications, incl
 
 Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://github.com/) with this template.
 
-```code
+```console
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
@@ -24,19 +24,19 @@ Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, and `.en
 
 Start the container with [Docker Compose](https://docs.docker.com/compose/).
 
-```code
+```console
 docker-compose up -d
 ```
 
 Access the [Node.js](https://nodejs.org/) container. For example:
 
-```code
+```console
 docker exec -it kickstart-templete_node bash
 ```
 
 Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
 
-```code
+```console
 npm update -g npm
 npm install -g n
 n lts
@@ -44,7 +44,7 @@ n lts
 
 Add project dependencies.
 
-```code
+```console
 npm install
 ```
 
@@ -69,38 +69,28 @@ Visit the page http://localhost:4321/ to see the result.
 Build the application.
 
 ```console
-npm run build:server
+npm run build
 ```
 
 Run the built application.
 
 ```console
-npm run preview:server
+npm run preview
 ```
 
 Visit the page https://localhost/ to see the result.
-
-## Docker`s Ngnix
-
-Build the application.
-
-```console
-npm run build:server
-```
-
-Visit the page http://localhost/ to see the result.
 
 ## Deploy in server
 
 Clone the project with [Git](https://git-scm.com/), for example:
 
-```code
+```console
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
 Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
 
-```code
+```console
 npm update -g npm
 npm install -g n
 n lts
@@ -108,16 +98,24 @@ n lts
 
 Add project dependencies.
 
-```code
+```console
 npm install
 ```
 
-Adapt the `.env`, `astro.config.mjs` and `src/pages/manifest.json.ts` files to your site.
+Adapt the `.env` file to your site.
+
+```console
+PUBLIC_SITE=https://localhost
+PUBLIC_DOMAIN=localhost
+PUBLIC_ADAPTER=server
+PUBLIC_BACKGROUND_COLOR="#ffffff"
+PUBLIC_THEME_COLOR="#000000"
+```
 
 Build the application.
 
 ```console
-npm run build:server
+npm run build
 ```
 
 Run the built application.
@@ -130,40 +128,27 @@ Visit the page to see the result, for example: http://localhost/.
 
 ## Deploy in Netlify
 
-Make sure the `package.json` file has the script like this:
-
-```json
-"build": "npm run build:server;",
-```
-
-Or add the global variable:
-
-```json
-PUBLIC_ADAPTER=server
-```
-
-Add environment variables before building the website. Edit and use the following variables:
+Adapt the `.env` file to your site.
 
 ```console
+PUBLIC_SITE=https://kickstart-template-demo.netlify.app
+PUBLIC_DOMAIN=kickstart-template-demo.netlify.app
+PUBLIC_ADAPTER=server
 PUBLIC_BACKGROUND_COLOR=#ffffff
 PUBLIC_THEME_COLOR=#000000
 ```
 
 ## Deploy in Vercel
 
-Make sure the `package.json` file has the script like this:
+Adapt the `.env` file to your site.
 
-```json
-"build": "npm run build:vercel;",
-```
-
-Or add the global variable:
-
-```json
+```console
+PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
+PUBLIC_DOMAIN=kickstart-template-demo.vercel.app
 PUBLIC_ADAPTER=vercel
+PUBLIC_BACKGROUND_COLOR="#ffffff"
+PUBLIC_THEME_COLOR="#000000"
 ```
-
-Add environment variables before building the website
 
 ## Author
 

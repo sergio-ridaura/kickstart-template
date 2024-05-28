@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/serverless";
 import "dotenv/config";
+import node from "@astrojs/node";
 
 const site = "https://kickstart-template-demo.vercel.app/";
 
@@ -13,6 +14,10 @@ let conf = {
   devToolbar: {
     enabled: false,
   },
+  output: "server",
+  adapter: node({
+    mode: "standalone",
+  }),
 };
 
 if (process.env.PUBLIC_ADAPTER === "vercel") {
