@@ -2,6 +2,7 @@
 .DS_Store
 .env
 .vercel
+.netlify
 dist/
 node_modules/
 npm-debug.log*
