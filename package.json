@@ -26,8 +26,8 @@
   "scripts": {
     "clean": "rm -R dist .astro .vercel .netlify;",
     "dev": "astro dev --host",
-    "build": "npm run clean; astro telemetry disable; astro check; export $(cat .env.prod) && astro build;",
-    "build:local": "npm run clean; astro telemetry disable; astro check; export $(cat .env.local) && astro build;",
+    "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build;",
+    "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build;",
     "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 node ./dist/server/entry.mjs",
     "start": "npm run preview",
     "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography astro dotenv tailwindcss typescript"
@@ -43,6 +43,7 @@
     "@tailwindcss/typography": "^0.5.13",
     "astro": "^4.9.2",
     "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }
