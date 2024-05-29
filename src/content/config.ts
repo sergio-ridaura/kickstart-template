@@ -8,6 +8,7 @@ const documentation = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     image: z.string().optional(),
+    link: z.string(),
   }),
 });
 
@@ -15,6 +16,7 @@ const globalCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    link: z.string(),
   }),
 });
 
