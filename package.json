@@ -3,7 +3,6 @@
   "title": "Kickstart template",
   "version": "1.5.0",
   "description": "Kickstart template for my website developments.",
-  "lang": "en",
   "keywords": [
     "react",
     "mysql",

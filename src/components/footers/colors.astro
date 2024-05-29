@@ -1,5 +1,5 @@
 ---
-import pkg from "@/package.json";
+import { PUBLIC_SITE_AUTHOR_NAME } from "@src/consts";
 import { getYear, randomArray } from "..";
 
 interface Link {
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const {
-  author = import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name,
+  author = PUBLIC_SITE_AUTHOR_NAME,
   links,
   color = "random",
 } = Astro.props;

@@ -1,5 +1,5 @@
 ---
-import pkg from "@/package.json";
+import { PUBLIC_SITE_TITLE } from "@src/consts";
 import { randomArray } from "..";
 
 interface Link {
@@ -24,11 +24,7 @@ interface Props {
     | "random";
 }
 
-const {
-  title = import.meta.env.PUBLIC_TITLE || pkg.title,
-  links,
-  color = "random",
-} = Astro.props;
+const { title = PUBLIC_SITE_TITLE, links, color = "random" } = Astro.props;
 
 let selectColor;
 

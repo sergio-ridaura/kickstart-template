@@ -2,11 +2,17 @@
 title: Privacy policy
 ---
 
-import pkg from "@/package.json";
+import {
+  PUBLIC_SITE_URL,
+  PUBLIC_SITE_TITLE,
+  PUBLIC_SITE_AUTHOR_NAME,
+  PUBLIC_SITE_AUTHOR_URL,
+  PUBLIC_SITE_AUTHOR_EMAIL,
+} from "@src/consts";
 
 ## 1. Introduction
 
-At **<a href={import.meta.env.PUBLIC_SITE}>{import.meta.env.PUBLIC_TITLE || pkg.title}</a>**, we respect and protect the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you visit our website **{import.meta.env.PUBLIC_SITE}**.
+At **<a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_TITLE}</a>**, we respect and protect the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you visit our website **{PUBLIC_SITE_URL}**.
 
 ## 2. Information We Collect
 
@@ -72,10 +78,6 @@ We may update this Privacy Policy periodically to reflect changes in our practic
 
 If you have any questions or concerns about this Privacy Policy or our privacy practices, you can contact us at:
 
-- <a href={import.meta.env.PUBLIC_AUTHOR_URL}>
-    {import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name}
-  </a>
-- {import.meta.env.PUBLIC_AUTHOR_EMAIL || pkg.author.email}
-- <a href={import.meta.env.PUBLIC_AUTHOR_URL}>
-    {import.meta.env.PUBLIC_AUTHOR_URL}
-  </a>
+- <a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
+- {PUBLIC_SITE_AUTHOR_EMAIL}
+- <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_URL}</a>
