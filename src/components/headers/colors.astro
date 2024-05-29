@@ -24,7 +24,7 @@ interface Props {
     | "random";
 }
 
-const { title = pkg.title, links, color = "random" } = Astro.props;
+const { title = import.meta.env.PUBLIC_TITLE || pkg.title, links, color = "random" } = Astro.props;
 
 let selectColor;
 
