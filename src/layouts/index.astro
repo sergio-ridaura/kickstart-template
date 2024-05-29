@@ -1,7 +1,7 @@
 ---
 import {
   DefaultHeadLayout,
-  ColorsHeaderLayout,
+  ColorsNav,
   ColorsFooterLayout,
 } from "@src/components";
 
@@ -23,41 +23,47 @@ const { title, author, description, keywords, image } = Astro.props;
   keywords={keywords}
   image={image}
 >
-  <ColorsHeaderLayout
-    links={[
-      {
-        title: "About",
-        url: "/about",
-      },
-      {
-        title: "Documentation",
-        url: "/documentation",
-      },
-      {
-        title: "Contact",
-        url: "/contact",
-      },
-      {
-        title: "GitHub",
-        url: "https://github.com/sergio-ridaura/kickstart-template",
-      },
-    ]}
-  />
-  <slot />
-  <ColorsFooterLayout
-    links={[
-      {
-        title: "Privacy policy",
-        url: "/privacy-policy",
-      },
-      {
-        title: "About",
-        url: "/about",
-      },
-      {
-        title: "Contact",
-        url: "/contact",
-      },
-    ]}
-  />
+  <header>
+    <ColorsNav
+      links={[
+        {
+          title: "About",
+          url: "/about",
+        },
+        {
+          title: "Documentation",
+          url: "/documentation",
+        },
+        {
+          title: "Contact",
+          url: "/contact",
+        },
+        {
+          title: "GitHub",
+          url: "https://github.com/sergio-ridaura/kickstart-template",
+        },
+      ]}
+    />
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <ColorsFooterLayout
+      links={[
+        {
+          title: "Privacy policy",
+          url: "/privacy-policy",
+        },
+        {
+          title: "About",
+          url: "/about",
+        },
+        {
+          title: "Contact",
+          url: "/contact",
+        },
+      ]}
+    />
+  </footer>
 </DefaultHeadLayout>

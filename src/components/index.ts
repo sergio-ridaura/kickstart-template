@@ -1,5 +1,5 @@
 import { ColorsFooterLayout } from "./footers";
-import { ColorsHeaderLayout } from "./headers";
+import { ColorsNav } from "./nav";
 import { DefaultHeadLayout } from "./heads";
 import { getFormattedDate } from "./date";
 import { getYear } from "./year";
@@ -7,7 +7,7 @@ import { randomArray } from "./array";
 
 export {
   ColorsFooterLayout,
-  ColorsHeaderLayout,
+  ColorsNav,
   DefaultHeadLayout,
   getFormattedDate,
   getYear,

@@ -9,10 +9,9 @@ const { Content } = await entry.render();
 
 <Layout>
   <main class="container px-4 mt-2 sm:px-0 sm:mx-auto">
-    <h1 class="text-4xl font-bold mb-8">{entry.data.title}</h1>
-    <article class="prose prose-gray prose-lg dark:prose-invert max-w-none">
+    <h1 class="text-3xl font-bold mb-8">{entry.data.title}</h1>
+    <article class="prose prose-gray dark:prose-invert max-w-none">
       <Content />
-      <article></article>
     </article>
   </main>
 </Layout>
