@@ -1,11 +1,11 @@
 export const prerender = true;
 import type { APIRoute } from "astro";
-import pkg from "@/package.json";
+import { PUBLIC_DEV_VERSION } from "@src/consts";
 
 const serviceWorker = `
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open("${pkg.version}").then((cache) => {
+    caches.open("${PUBLIC_DEV_VERSION}").then((cache) => {
       return cache.addAll(
         [
           "/",

@@ -1,5 +1,5 @@
 ---
-import pkg from "@/package.json";
+import { PUBLIC_SITE_AUTHOR_NAME } from "@src/consts";
 import { getYear, randomArray } from "..";
 
 interface Link {
@@ -24,7 +24,11 @@ interface Props {
     | "random";
 }
 
-const { author = import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name, links, color = "random" } = Astro.props;
+const {
+  author = PUBLIC_SITE_AUTHOR_NAME,
+  links,
+  color = "random",
+} = Astro.props;
 
 let selectColor;
 
@@ -65,31 +69,29 @@ const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
 ];*/
 ---
 
-<footer>
-  <div class="container py-6 mx-auto">
-    <hr class={`my-8 ${hrClass}`} />
+<div class="container py-6 mx-auto">
+  <hr class={`my-6 ${hrClass}`} />
 
-    <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-      <p class={`mt-4 ${pClass}`}>
-        © Copyright {getYear()}. {author}.
-      </p>
+  <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+    <p class={`mt-4 ${pClass}`}>
+      © Copyright {getYear()}. {author}.
+    </p>
 
-      <div class="flex mt-4">
-        {
-          links &&
-            links.length > 0 &&
-            links.map((link) => (
-              <a
-                href={link.url}
-                aria-label={link.title}
-                class={`mx-2 ${linkClass} transition-colors duration-300`}
-                data-astro-prefetch
-              >
-                {link.title}
-              </a>
-            ))
-        }
-      </div>
+    <div class="flex mt-4">
+      {
+        links &&
+          links.length > 0 &&
+          links.map((link) => (
+            <a
+              href={link.url}
+              aria-label={link.title}
+              class={`mx-2 ${linkClass} transition-colors duration-300`}
+              data-astro-prefetch
+            >
+              {link.title}
+            </a>
+          ))
+      }
     </div>
   </div>
-</footer>
+</div>

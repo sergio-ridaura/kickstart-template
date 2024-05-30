@@ -1,9 +1,20 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import pkg from "@/package.json";
+import {
+  PUBLIC_DEV_AUTHOR_NAME,
+  PUBLIC_DEV_AUTHOR_URL,
+  PUBLIC_DEV_AUTHOR_EMAIL,
+  PUBLIC_SITE_LANG,
+  PUBLIC_SITE_TITLE,
+  PUBLIC_SITE_DESCRIPTION,
+  PUBLIC_SITE_KEYWORDS,
+  PUBLIC_DEV_VERSION,
+  PUBLIC_SITE_BACKGROUND_COLOR,
+  PUBLIC_SITE_THEME_COLOR,
+} from "@src/consts";
 import { getFormattedDate } from "..";
 
-const developer = `${import.meta.env.PUBLIC_AUTHOR_NAME || pkg.author.name} ${import.meta.env.PUBLIC_AUTHOR_URL || pkg.author.url} ${import.meta.env.PUBLIC_AUTHOR_EMAIL || pkg.author.email}`;
+const developer = `${PUBLIC_DEV_AUTHOR_NAME} ${PUBLIC_DEV_AUTHOR_URL} ${PUBLIC_DEV_AUTHOR_EMAIL}`;
 
 interface Props {
   lang?: string;
@@ -15,11 +26,11 @@ interface Props {
 }
 
 const {
-  lang = import.meta.env.PUBLIC_LANG || pkg.lang,
-  title = import.meta.env.PUBLIC_TITLE || pkg.title,
+  lang = PUBLIC_SITE_LANG,
+  title = PUBLIC_SITE_TITLE,
   author = developer,
-  description = import.meta.env.PUBLIC_DESCRIPTION || pkg.description,
-  keywords = import.meta.env.PUBLIC_AUTHOR_KEYWORDS || pkg.keywords.join(", "),
+  description = PUBLIC_SITE_DESCRIPTION,
+  keywords = PUBLIC_SITE_KEYWORDS,
   image = "/images/default-placeholder.jpg",
 } = Astro.props;
 
@@ -36,7 +47,7 @@ const socialImageURL = new URL(image, Astro.url);
     <link rel="stylesheet" href="/css/styles.css" />
 
     <title>{title}</title>
-    <meta name="version" content={pkg.version} />
+    <meta name="version" content={PUBLIC_DEV_VERSION} />
     <meta name="author" content={author} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
@@ -48,11 +59,8 @@ const socialImageURL = new URL(image, Astro.url);
     />
     <meta name="build" content={String(getFormattedDate())} />
     <meta name="robots" content="index, follow" />
-    <meta
-      name="background_color"
-      content=`${import.meta.env.PUBLIC_BACKGROUND_COLOR}`
-    />
-    <meta name="theme-color" content=`${import.meta.env.PUBLIC_THEME_COLOR}` />
+    <meta name="background_color" content=`${PUBLIC_SITE_BACKGROUND_COLOR}` />
+    <meta name="theme-color" content=`${PUBLIC_SITE_THEME_COLOR}` />
     <ViewTransitions />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
@@ -81,14 +89,15 @@ const socialImageURL = new URL(image, Astro.url);
   </head>
   <body>
     <slot />
-    <style is:global>
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-
-      body {
-        @apply bg-bg_light dark:bg-bg_dark text-tx_light dark:text-tx_dark;
-      }
-    </style>
   </body>
 </html>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  body {
+    @apply bg-bg_light dark:bg-bg_dark text-tx_light dark:text-tx_dark;
+  }
+</style>

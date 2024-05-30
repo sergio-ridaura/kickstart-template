@@ -8,7 +8,7 @@ import netlify from "@astrojs/netlify";
 import mdx from "@astrojs/mdx";
 
 const conf = {
-  site: process.env.PUBLIC_SITE,
+  site: process.env.PUBLIC_SITE_URL,
   prefetch: true,
   integrations: [tailwind(), sitemap(), mdx()],
   devToolbar: {
@@ -16,10 +16,10 @@ const conf = {
   },
 };
 
-if (process.env.PUBLIC_ADAPTER === "vercel") {
+if (process.env.PUBLIC_SITE_ADAPTER === "vercel") {
   conf.output = "server";
   conf.adapter = vercel();
-} else if (process.env.PUBLIC_ADAPTER === "netlify") {
+} else if (process.env.PUBLIC_SITE_ADAPTER === "netlify") {
   conf.output = "server";
   conf.adapter = netlify();
 } else {

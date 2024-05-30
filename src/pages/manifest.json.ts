@@ -1,15 +1,20 @@
 export const prerender = true;
 import type { APIRoute } from "astro";
-import pkg from "@/package.json";
+import {
+  PUBLIC_SITE_TITLE,
+  PUBLIC_SITE_DESCRIPTION,
+  PUBLIC_SITE_BACKGROUND_COLOR,
+  PUBLIC_SITE_THEME_COLOR,
+} from "@src/consts";
 
 const manifestTxt = `{
-  "name": "${import.meta.env.PUBLIC_TITLE || pkg.title}",
-  "short_name": "${import.meta.env.PUBLIC_TITLE || pkg.title}",
-  "description": "${import.meta.env.PUBLIC_DESCRIPTION || pkg.description}",
+  "name": "${PUBLIC_SITE_TITLE}",
+  "short_name": "${PUBLIC_SITE_TITLE}",
+  "description": "${PUBLIC_SITE_DESCRIPTION}",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "${import.meta.env.PUBLIC_BACKGROUND_COLOR}",
-  "theme_color": "${import.meta.env.PUBLIC_THEME_COLOR}",
+  "background_color": "${PUBLIC_SITE_BACKGROUND_COLOR}",
+  "theme_color": "${PUBLIC_SITE_THEME_COLOR}",
   "orientation": "portrait-primary",
   "icons": [
     {

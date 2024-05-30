@@ -3,7 +3,6 @@
   "title": "Kickstart template",
   "version": "1.5.0",
   "description": "Kickstart template for my website developments.",
-  "lang": "en",
   "keywords": [
     "react",
     "mysql",
@@ -28,15 +27,16 @@
     "dev": "astro dev --host",
     "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build;",
     "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build;",
-    "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 node ./dist/server/entry.mjs",
+    "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 PORT=443 node ./dist/server/entry.mjs",
     "start": "npm run preview",
-    "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography astro dotenv tailwindcss typescript"
+    "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/rss @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography astro dotenv dotenv-cli tailwindcss typescript"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^3.0.1",
     "@astrojs/netlify": "^5.2.1",
     "@astrojs/node": "^8.2.5",
+    "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.6.0",

@@ -1,9 +1,37 @@
 ---
+export const prerender = true;
 import Layout from "@src/layouts/index.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("documentation")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <Layout>
-  <main class="container mx-auto">
-    <h1 class="text-4xl">Documentation</h1>
+  <main class="container px-4 mt-2 sm:px-0 sm:mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Documentation</h1>
+    <article class="max-w-none">
+      <section>
+        <ul
+          class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-6"
+        >
+          {
+            posts.map((post) => (
+              <li class="border border-gray-500">
+                <a href={`/documentation/${post.slug}/`}>
+                  <img class="" src={post.data.image} alt="" />
+                  <div class="p-3">
+                    <h4 class="text-xl font-bold mb-4">{post.data.title}</h4>
+                    <p class="mb-4">{post.data.description}</p>
+                    <p class="">{post.data.pubDate}</p>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </article>
   </main>
 </Layout>
