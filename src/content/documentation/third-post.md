@@ -2,7 +2,7 @@
 title: "Third post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 22 2022"
-image: "/documentation-placeholder-2.jpg"
+image: "/images/third-post.jpg"
 link: "/documentation/third-post"
 ---
 

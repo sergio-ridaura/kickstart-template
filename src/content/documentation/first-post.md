@@ -2,7 +2,7 @@
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
-image: "/documentation-placeholder-3.jpg"
+image: "/images/first-post.jpg"
 link: "/documentation/first-post"
 ---
 
