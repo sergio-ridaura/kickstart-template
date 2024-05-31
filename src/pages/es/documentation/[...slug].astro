@@ -1,0 +1,27 @@
+---
+export const prerender = true;
+import Layout from "@src/layouts/index.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("documentation");
+  return posts.map((post) => ({
+    params: { slug: `es/documentation/post.slug` },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"documentation">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout>
+  <main class="container px-4 mt-2 sm:px-0 sm:mx-auto">
+    <h1 class="text-3xl font-bold mb-8">{post.data.title}</h1>
+    <article class="prose prose-gray dark:prose-invert max-w-none">
+      <Content />
+    </article>
+  </main>
+</Layout>

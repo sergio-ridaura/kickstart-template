@@ -5,7 +5,6 @@ export const PUBLIC_SITE_DESCRIPTION=import.meta.env.PUBLIC_SITE_DESCRIPTION || 
 export const PUBLIC_SITE_AUTHOR_NAME=import.meta.env.PUBLIC_SITE_AUTHOR_NAME || pkg.author.name;
 export const PUBLIC_SITE_AUTHOR_URL=import.meta.env.PUBLIC_SITE_AUTHOR_URL || pkg.author.url;
 export const PUBLIC_SITE_AUTHOR_EMAIL=import.meta.env.PUBLIC_SITE_AUTHOR_EMAIL || pkg.author.email;
-export const PUBLIC_SITE_LANG=import.meta.env.PUBLIC_SITE_LANG;
 export const PUBLIC_SITE_KEYWORDS=import.meta.env.PUBLIC_SITE_KEYWORDS || pkg.keywords;
 
 export const PUBLIC_DEV_TITLE=pkg.title;

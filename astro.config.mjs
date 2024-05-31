@@ -14,6 +14,16 @@ const conf = {
   devToolbar: {
     enabled: false,
   },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+    fallback: {
+      es: "en",
+    },
+  },
 };
 
 if (process.env.PUBLIC_SITE_ADAPTER === "vercel") {
