@@ -1,6 +1,9 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { randomArray } from "..";
+import { randomArray, getSwitchI18n } from "..";
+import {} from "@src/i18n/ui";
+
+const switchI18n = getSwitchI18n(Astro.url);
 
 interface Link {
   title: string;
@@ -117,14 +120,23 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
                     class={`px-0 py-1 ${linkClass} transition-colors duration-300`}
                     data-astro-prefetch
                   >
-                    <p
-                      class={`px-2 py-1 inline-block border border-transparent ${linkClass}`}
-                    >
+                    <p class={`px-2 py-1 inline-block ${linkClass}`}>
                       {link.title}
                     </p>
                   </a>
                 ))
             }
+            <a
+              href={`${switchI18n?.url}`}
+              class={`px-0 py-1 pl-8 ${linkClass} transition-colors duration-300`}
+              data-astro-prefetch
+            >
+              <p
+                class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${linkClass}`}
+              >
+                {switchI18n?.label}
+              </p>
+            </a>
           </div>
         </div>
       </div>
@@ -141,17 +153,24 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
             <a
               href={link.url}
               aria-label={link.title}
-              class={`block px-2 py-1 transition-colors duration-300`}
+              class="block px-2 py-1 transition-colors duration-300"
               data-astro-prefetch
             >
-              <p
-                class={`px-2 py-1 inline-block border border-transparent ${likMobileClass}`}
-              >
+              <p class={`px-2 py-1 inline-block ${likMobileClass}`}>
                 {link.title}
               </p>
             </a>
           ))
       }
+      <a
+        href={`${switchI18n?.url}`}
+        class={`block px-4 py-1 ${likMobileClass} transition-colors duration-300`}
+        data-astro-prefetch
+      >
+        <p class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${likMobileClass}`}>
+          {switchI18n?.label}
+        </p>
+      </a>
     </div>
     <hr class={`py-6 ${hrClass}`} />
   </div>
