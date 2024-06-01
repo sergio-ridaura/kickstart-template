@@ -4,9 +4,9 @@ import Layout from "@src/layouts/index.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("documentation");
+  const posts = await getCollection("es");
   return posts.map((post) => ({
-    params: { slug: `es/documentation/post.slug` },
+    params: { slug: post.slug },
     props: post,
   }));
 }

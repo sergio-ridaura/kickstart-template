@@ -2,8 +2,6 @@ import { defaultLang, languages } from "@src/i18n/ui";
 import { getLangI18n } from ".";
 
 export default function getSwitchI18n(url: URL) {
-  const trimmLang = Object.fromEntries(Object.entries(languages).slice(0, 2));
-  const filterLang: { [key: string]: string } = {};
   const lang = getLangI18n(url);
   for (const [key, value] of Object.entries(languages)) {
     if (key !== lang) {

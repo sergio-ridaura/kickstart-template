@@ -20,9 +20,9 @@ const conf = {
     routing: {
       prefixDefaultLocale: false,
     },
-    fallback: {
-      es: "en",
-    },
+    // fallback: {
+    //   es: "en",
+    // },
   },
 };
 

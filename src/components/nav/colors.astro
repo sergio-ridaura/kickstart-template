@@ -1,6 +1,6 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { randomArray, getSwitchI18n, getUrlI18n } from "..";
+import { randomArray, getSwitchI18n } from "..";
 import {} from "@src/i18n/ui";
 
 const switchI18n = getSwitchI18n(Astro.url);
@@ -128,10 +128,12 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
             }
             <a
               href={`${switchI18n?.url}`}
-              class={`px-0 py-1 ${linkClass} transition-colors duration-300`}
+              class={`px-0 py-1 pl-8 ${linkClass} transition-colors duration-300`}
               data-astro-prefetch
             >
-              <p class={`px-2 py-1 inline-block ${linkClass}`}>
+              <p
+                class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${linkClass}`}
+              >
                 {switchI18n?.label}
               </p>
             </a>
@@ -162,10 +164,10 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
       }
       <a
         href={`${switchI18n?.url}`}
-        class={`block px-2 py-1 ${likMobileClass} transition-colors duration-300`}
+        class={`block px-4 py-1 ${likMobileClass} transition-colors duration-300`}
         data-astro-prefetch
       >
-        <p class={`px-2 py-1 inline-block ${likMobileClass}`}>
+        <p class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${likMobileClass}`}>
           {switchI18n?.label}
         </p>
       </a>

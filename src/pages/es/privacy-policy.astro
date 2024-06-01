@@ -3,7 +3,7 @@ export const prerender = true;
 import Layout from "@src/layouts/index.astro";
 import { getEntry } from "astro:content";
 
-const entry = await getEntry("globals", "privacy-policy");
+const entry = await getEntry("es", "globals/privacy-policy");
 const { Content } = await entry.render();
 ---
 
