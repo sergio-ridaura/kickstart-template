@@ -9,10 +9,15 @@ self.addEventListener("install", (event) => {
       return cache.addAll(
         [
           "/",
+          "/es/",
           "/about/",
+          "/es/about/",
           "/contact/",
+          "/es/contact/",
           "/documentation/",
+          "/es/documentation/",
           "/privacy-policy/",
+          "/es/privacy-policy/",
           "/css/fonts.css",
           "/css/styles.css",
           "/fonts/Atkinson-Hyperlegible-Bold-102.eot",

@@ -1,12 +1,12 @@
 export const prerender = true;
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { PUBLIC_SITE_TITLE, PUBLIC_SITE_DESCRIPTION } from "@src/consts";
-import { defaultLang } from "@src/i18n/ui";
+import { PUBLIC_SITE_TITLE, PUBLIC_SITE_DESCRIPTION, PUBLIC_SITE_LANG_DEFAULT } from "@src/consts";
 
 const globals = await getCollection("globals");
 const posts = await getCollection("documentation");
-const allPosts = [...posts, ...globals];
+const postsEs = await getCollection("es");
+const allPosts = [...posts, ...postsEs, ...globals];
 
 export async function GET(context) {
   return rss({
@@ -16,7 +16,7 @@ export async function GET(context) {
     items: allPosts.map((post) => ({
       ...post.data,
     })),
-    customData: `<language>${defaultLang}</language>`,
+    customData: `<language>${PUBLIC_SITE_LANG_DEFAULT}</language>`,
     stylesheet: "/css/rss.xsl",
   });
 }
