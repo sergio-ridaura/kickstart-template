@@ -6,6 +6,8 @@
       "@/*": ["./*"],
       "@src/*": ["./src/*"],
       "@pbl/*": ["./public/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

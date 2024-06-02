@@ -1,16 +1,17 @@
-import { defineConfig } from "astro/config";
 import "dotenv/config";
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/serverless";
-import node from "@astrojs/node";
-import netlify from "@astrojs/netlify";
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
+import netlify from "@astrojs/netlify";
+import node from "@astrojs/node";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
 
 const conf = {
   site: process.env.PUBLIC_SITE_URL,
   prefetch: true,
-  integrations: [tailwind(), sitemap(), mdx()],
+  integrations: [tailwind(), sitemap(), mdx(), react()],
   devToolbar: {
     enabled: false,
   },
@@ -20,9 +21,9 @@ const conf = {
     routing: {
       prefixDefaultLocale: false,
     },
-    // fallback: {
-    //   es: "en",
-    // },
+    fallback: {
+      es: "en",
+    },
   },
 };
 
