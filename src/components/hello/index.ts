@@ -1,3 +1,3 @@
-import ReactHello from "react"
+import ReactHello from "./reactHello"
 
 export { ReactHello };
