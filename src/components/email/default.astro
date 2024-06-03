@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  email: string;
+  className?: string;
+}
+
+const { title, email, className } = Astro.props;
+---
+
+<a href={`mailto:${email}`} aria-label={title} class={className}>
+  <slot />
+</a>

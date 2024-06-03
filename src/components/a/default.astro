@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  className?: string;
+  prefetch?: boolean;
+}
+
+const { title, url, className, prefetch = true } = Astro.props;
+---
+
+<a
+  href={url}
+  aria-label={title}
+  class={className}
+  {...prefetch && { "data-astro-prefetch": true }}
+>
+  <slot />
+</a>

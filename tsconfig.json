@@ -5,10 +5,10 @@
     "paths": {
       "@/*": ["./*"],
       "@src/*": ["./src/*"],
+      "@cmp/*": ["./src/components/*"],
       "@pbl/*": ["./public/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  },
-  "include": ["src/**/*.tsx"]
+  }
 }
