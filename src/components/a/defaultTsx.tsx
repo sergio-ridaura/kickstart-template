@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   title: string;
   url: string;
-  className: string;
+  className?: string;
   prefetch?: boolean;
   children: React.ReactNode;
 }

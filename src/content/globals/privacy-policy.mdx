@@ -1,9 +1,9 @@
 ---
-title: Política de privacidad
-description: Lorem ipsum dolor sit amet
+title: Privacy Policy
+description: The website's Privacy Policy describes how we collect, use, disclose, and protect users' personal information.
 author: Sergio Ridaura
-pubDate: 2022-06-01
-image: /documentation-placeholder-3.jpg
+pubDate: 2024-06-03
+image: /images/privacy-policy.jpg
 ---
 
 import {
@@ -13,6 +13,7 @@ import {
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
 } from "@src/consts";
+import { DefaultEmail } from "@cmp/.";
 
 ## 1. Introduction
 
@@ -83,5 +84,12 @@ We may update this Privacy Policy periodically to reflect changes in our practic
 If you have any questions or concerns about this Privacy Policy or our privacy practices, you can contact us at:
 
 - <a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
-- {PUBLIC_SITE_AUTHOR_EMAIL}
+
+  <DefaultEmail
+    title={PUBLIC_SITE_AUTHOR_NAME}
+    email={PUBLIC_SITE_AUTHOR_EMAIL}
+  >
+    <li>{PUBLIC_SITE_AUTHOR_EMAIL}</li>
+  </DefaultEmail>
+
 - <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_URL}</a>

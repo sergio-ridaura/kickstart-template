@@ -1,6 +1,6 @@
 export default function getFormattedDate(
   date?: Date,
-  locale: string = "en-US",
+  locale: string = "en",
   options?: Intl.DateTimeFormatOptions
 ): string {
   const currentDate = date || new Date();
