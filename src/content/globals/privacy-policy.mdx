@@ -3,6 +3,7 @@ title: Privacy Policy
 description: The website's Privacy Policy describes how we collect, use, disclose, and protect users' personal information.
 author: Sergio Ridaura
 pubDate: 2024-06-03
+upDate: 2024-06-04
 image: /images/privacy-policy.jpg
 ---
 
@@ -13,11 +14,11 @@ import {
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
 } from "@src/consts";
-import { DefaultEmail } from "@cmp/.";
+import { DefaultA, DefaultEmail } from "@cmp/.";
 
 ## 1. Introduction
 
-At **<a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_TITLE}</a>**, we respect and protect the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you visit our website **{PUBLIC_SITE_URL}**.
+At **<DefaultA title={PUBLIC_SITE_TITLE} url={PUBLIC_SITE_URL}>{PUBLIC_SITE_TITLE}</DefaultA>**, we respect and protect the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you visit our website **<DefaultA title="url" url={PUBLIC_SITE_URL}>{PUBLIC_SITE_URL}</DefaultA>**.
 
 ## 2. Information We Collect
 
@@ -83,13 +84,11 @@ We may update this Privacy Policy periodically to reflect changes in our practic
 
 If you have any questions or concerns about this Privacy Policy or our privacy practices, you can contact us at:
 
-- <a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
-
-  <DefaultEmail
+- <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
+- <DefaultEmail
     title={PUBLIC_SITE_AUTHOR_NAME}
     email={PUBLIC_SITE_AUTHOR_EMAIL}
   >
-    <li>{PUBLIC_SITE_AUTHOR_EMAIL}</li>
+    {PUBLIC_SITE_AUTHOR_EMAIL}
   </DefaultEmail>
-
 - <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_URL}</a>

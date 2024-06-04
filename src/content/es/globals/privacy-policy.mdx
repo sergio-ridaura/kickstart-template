@@ -3,6 +3,7 @@ title: Política de Privacidad
 description: La Política de Privacidad del sitio web describe cómo recopilamos, utilizamos, divulgamos y protegemos la información personal de los usuarios.
 author: Sergio Ridaura
 pubDate: 2024-06-03
+upDate: 2024-06-04
 image: /images/privacy-policy.jpg
 ---
 
@@ -13,11 +14,11 @@ import {
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
 } from "@src/consts";
-import { DefaultEmail } from "@cmp/.";
+import { DefaultA, DefaultEmail } from "@cmp/.";
 
 ## 1. Introducción
 
-En **<a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_TITLE}</a>**, respetamos y protegemos la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando visita nuestro sitio web **{PUBLIC_SITE_URL}**.
+En **<DefaultA title={PUBLIC_SITE_TITLE} url={PUBLIC_SITE_URL}>{PUBLIC_SITE_TITLE}</DefaultA>**, respetamos y protegemos la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, usamos, divulgamos y protegemos su información personal cuando visita nuestro sitio web **<DefaultA title="url" url={PUBLIC_SITE_URL}>{PUBLIC_SITE_URL}</DefaultA>**.
 
 ## 2. Información que Recopilamos
 
@@ -83,13 +84,11 @@ Podemos actualizar esta Política de Privacidad periódicamente para reflejar ca
 
 Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad o nuestras prácticas de privacidad, puede contactarnos en:
 
-- <a href={PUBLIC_SITE_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
-
-  <DefaultEmail
+- <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
+- <DefaultEmail
     title={PUBLIC_SITE_AUTHOR_NAME}
     email={PUBLIC_SITE_AUTHOR_EMAIL}
   >
-    <li>{PUBLIC_SITE_AUTHOR_EMAIL}</li>
+    {PUBLIC_SITE_AUTHOR_EMAIL}
   </DefaultEmail>
-
 - <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_URL}</a>

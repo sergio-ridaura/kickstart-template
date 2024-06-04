@@ -1,0 +1,38 @@
+---
+import Layout from "@src/layouts/index.astro";
+import { getFormattedDate } from "@cmp/.";
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <main class="container px-4 mt-2 sm:px-0 sm:mx-auto">
+    <h1 class="text-3xl font-bold mb-6">{entry.data.title}</h1>
+    <div class="mb-8">
+      <p class="mb-4">{entry.data.description}</p>
+      <p class="font-semibold opacity-80">
+        {entry.data.author}
+        <span class="italic"
+          >. {entry.data.upDate ? "Updated" : "Created"}: {
+            getFormattedDate(entry.data.upDate || entry.data.pubDate, "es")
+          }</span
+        >
+      </p>
+    </div>
+    <div class="grid w-full place-items-center">
+      <img
+        class="mb-8 border border-gray-500 object-contain hover:object-scale-down"
+        src={entry.data.image}
+        alt={entry.data.title}
+      />
+    </div>
+    <article class="prose prose-gray dark:prose-invert max-w-none">
+      <Content />
+    </article>
+  </main>
+</Layout>

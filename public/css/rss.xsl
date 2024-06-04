@@ -1,73 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
 
-# Pretty Feed
-
-Styles an RSS/Atom feed, making it friendly for humans viewers, and adds a link
-to aboutfeeds.com for new user onboarding. See it in action:
-
-   https://interconnected.org/home/feed
-
-
-## How to use
-
-1. Download this XML stylesheet from the following URL and host it on your own
-   domain (this is a limitation of XSL in browsers):
-
-   https://github.com/genmon/aboutfeeds/blob/main/tools/pretty-feed-v3.xsl
-
-2. Include the XSL at the top of the RSS/Atom feed, like:
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/PATH-TO-YOUR-STYLES/pretty-feed-v3.xsl" type="text/xsl"?>
-```
-
-3. Serve the feed with the following HTTP headers:
-
-```
-Content-Type: application/xml; charset=utf-8  # not application/rss+xml
-x-content-type-options: nosniff
-```
-
-(These headers are required to style feeds for users with Safari on iOS/Mac.)
-
-
-
-## Limitations
-
-- Styling the feed *prevents* the browser from automatically opening a
-  newsreader application. This is a trade off, but it's a benefit to new users
-  who won't have a newsreader installed, and they are saved from seeing or
-  downloaded obscure XML content. For existing newsreader users, they will know
-  to copy-and-paste the feed URL, and they get the benefit of an in-browser feed
-  preview.
-- Feed styling, for all browsers, is only available to site owners who control
-  their own platform. The need to add both XML and HTTP headers makes this a
-  limited solution.
-
-
-## Credits
-
-pretty-feed is based on work by lepture.com:
-
-   https://lepture.com/en/2019/rss-style-with-xsl
-
-This current version is maintained by aboutfeeds.com:
-
-   https://github.com/genmon/aboutfeeds
-
-
-## Feedback
-
-This file is in BETA. Please test and contribute to the discussion:
-
-     https://github.com/genmon/aboutfeeds/issues/8
-
--->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  >
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -89,7 +25,6 @@ This file is in BETA. Please test and contribute to the discussion:
         <div class="container-md px-3 py-3 markdown-body">
           <header class="py-5">
             <h1 class="border-0">
-              <!-- https://commons.wikimedia.org/wiki/File:Feed-icon.svg -->
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="vertical-align: text-bottom; width: 1.2em; height: 1.2em;" class="pr-1" id="RSSicon" viewBox="0 0 256 256">
                 <defs>
                   <linearGradient x1="0.085" y1="0.085" x2="0.915" y2="0.915" id="RSSg">
@@ -106,7 +41,6 @@ This file is in BETA. Please test and contribute to the discussion:
                 <path d="M160 213h-34a82 82 0 0 0 -82 -82v-34a116 116 0 0 1 116 116z" fill="#FFF"/>
                 <path d="M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z" fill="#FFF"/>
               </svg>
-
               Web Feed Preview
             </h1>
             <h2><xsl:value-of select="/rss/channel/title"/></h2>
