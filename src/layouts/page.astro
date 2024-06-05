@@ -16,12 +16,15 @@ const { Content } = await entry.render();
     <div class="mb-8">
       <p class="mb-4">{entry.data.description}</p>
       <p class="font-semibold opacity-80">
-        {entry.data.author}
-        <span class="italic"
-          >. {entry.data.upDate ? "Updated" : "Created"}: {
-            getFormattedDate(entry.data.upDate || entry.data.pubDate, "es")
-          }</span
-        >
+        {entry.data.author}.
+        <span class="italic">
+          {entry.data?.upDate ? "Updated" : "Created"}: {
+            getFormattedDate(
+              entry.data?.upDate ? entry.data.upDate : entry.data.pubDate,
+              "es"
+            )
+          }
+        </span>
       </p>
     </div>
     <div class="grid w-full place-items-center">

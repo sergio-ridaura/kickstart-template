@@ -1,9 +1,9 @@
 ---
 title: Privacy Policy
-description: The website's Privacy Policy describes how we collect, use, disclose, and protect users' personal information.
+description: How we collect, use, disclose, and protect users' personal information.
 author: Sergio Ridaura
 pubDate: 2024-06-03
-upDate: 2024-06-04
+upDate: 2024-06-05
 image: /images/privacy-policy.jpg
 ---
 
@@ -84,11 +84,15 @@ We may update this Privacy Policy periodically to reflect changes in our practic
 
 If you have any questions or concerns about this Privacy Policy or our privacy practices, you can contact us at:
 
-- <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_NAME}</a>
+- <DefaultA title="PUBLIC_SITE_AUTHOR_NAME" url={PUBLIC_SITE_AUTHOR_NAME}>
+    {PUBLIC_SITE_AUTHOR_NAME}
+  </DefaultA>
 - <DefaultEmail
     title={PUBLIC_SITE_AUTHOR_NAME}
     email={PUBLIC_SITE_AUTHOR_EMAIL}
   >
     {PUBLIC_SITE_AUTHOR_EMAIL}
   </DefaultEmail>
-- <a href={PUBLIC_SITE_AUTHOR_URL}>{PUBLIC_SITE_AUTHOR_URL}</a>
+- <DefaultA title="GitHub" url={PUBLIC_SITE_AUTHOR_URL}>
+    {PUBLIC_SITE_AUTHOR_URL}
+  </DefaultA>

@@ -1,9 +1,12 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { randomArray, getSwitchI18n, DefaultA } from "..";
+import { randomArray, getSwitchI18n, getUrlI18n, DefaultA } from "..";
 import {} from "@src/i18n/ui";
 
 const switchI18n = getSwitchI18n(Astro.url);
+const home = getUrlI18n(Astro.url);
+
+console.log(home)
 
 interface Link {
   title: string;
@@ -103,7 +106,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
       >
         <DefaultA
           title={title}
-          url="/"
+          url={`${home}/`}
           className={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}
           prefetch={true}
         >

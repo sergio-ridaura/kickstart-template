@@ -1,41 +1,48 @@
 ---
 title: Sobre mí
-description: .
+description: "Hola, soy Sergio Ridaura. Desarrollador full stack: TypeScript, AssemblyScript, Astro, React, Tailwind, Node y MySQL. Desarrollo rápido de aplicaciones y sitios web de alto rendimiento."
 author: Sergio Ridaura
-pubDate: 2024-06-05
+pubDate: 2024-06-04
+upDate: 2024-06-05
 image: /images/about.jpg
 ---
 
-## Sobre Mí
+import {
+  PUBLIC_SITE_AUTHOR_NAME,
+  PUBLIC_SITE_AUTHOR_URL,
+  PUBLIC_SITE_AUTHOR_EMAIL,
+} from "@src/consts";
+import { DefaultA, DefaultEmail } from "@cmp/.";
 
-### Hola, soy [Tu Nombre]
+## Hola, soy Sergio Ridaura
 
-Soy [tu profesión], apasionado por [tu campo o interés principal]. Con [número] años de experiencia en [industria/campo], he tenido la oportunidad de trabajar en [breve descripción de áreas de trabajo].
+Desde pequeño, siempre me fascinó la informática [una anécdota o interés relacionado con tu campo]. A lo largo de los años, he trabajado en [resumen de tu trayectoria profesional], lo que me ha llevado a [logro o hito significativo].
 
-### Mi Historia
+Soy desarrollador, apasionado por [tu campo o interés principal]. Con más de 20 años de experiencia en las nuevas tecnologías, he tenido la oportunidad de trabajar en [breve descripción de áreas de trabajo].
 
-Desde pequeño, siempre me fascinó [una anécdota o interés relacionado con tu campo]. A lo largo de los años, he trabajado en [resumen de tu trayectoria profesional], lo que me ha llevado a [logro o hito significativo].
-
-### Misión y Valores
+## Misión y Valores
 
 Creo firmemente en [valores principales], y mi misión es [tu misión profesional]. Mi trabajo se enfoca en [explicación breve de cómo aplicas tus valores en tu trabajo].
 
-### Habilidades y Experiencia
+## Habilidades y Experiencia
 
 - **Habilidad 1:** Descripción breve de tu habilidad y cómo la has aplicado.
 - **Habilidad 2:** Descripción breve de tu habilidad y cómo la has aplicado.
 - **Habilidad 3:** Descripción breve de tu habilidad y cómo la has aplicado.
 
-### Testimonios
+## Contacto
 
-"Trabajar con [Tu Nombre] fue una experiencia increíble. Su capacidad para [logro o habilidad específica] es insuperable." - [Nombre del Cliente o Colega]
+Me encantaría saber de ti. Puedes contactarme a través de <DefaultEmail title={PUBLIC_SITE_AUTHOR_NAME} email={PUBLIC_SITE_AUTHOR_EMAIL} >{PUBLIC_SITE_AUTHOR_EMAIL}</DefaultEmail> o en las siguientes formas de contacto.
 
-### Contacto
-
-Me encantaría saber de ti. Puedes contactarme a través de [tu correo electrónico] o seguirme en [tus redes sociales].
-
----
-
-[Tu Nombre]
-[Tu Profesión]
-[Tu Sitio Web]
+- <DefaultA title="PUBLIC_SITE_AUTHOR_NAME" url={PUBLIC_SITE_AUTHOR_NAME}>
+    {PUBLIC_SITE_AUTHOR_NAME}
+  </DefaultA>
+- <DefaultEmail
+    title={PUBLIC_SITE_AUTHOR_NAME}
+    email={PUBLIC_SITE_AUTHOR_EMAIL}
+  >
+    {PUBLIC_SITE_AUTHOR_EMAIL}
+  </DefaultEmail>
+- <DefaultA title="GitHub" url={PUBLIC_SITE_AUTHOR_URL}>
+    {PUBLIC_SITE_AUTHOR_URL}
+  </DefaultA>

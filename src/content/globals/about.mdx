@@ -1,10 +1,18 @@
 ---
 title: About
-description: .
+description: "Hi, I'm Sergio Ridaura. I am a full stack developer specializing in TypeScript, AssemblyScript, Astro, React, Tailwind, Node, and MySQL. I focus on the rapid development of high-performance applications and websites."
 author: Sergio Ridaura
-pubDate: 2024-06-05
+pubDate: 2024-06-04
+upDate: 2024-06-05
 image: /images/about.jpg
 ---
+
+import {
+  PUBLIC_SITE_AUTHOR_NAME,
+  PUBLIC_SITE_AUTHOR_URL,
+  PUBLIC_SITE_AUTHOR_EMAIL,
+} from "@src/consts";
+import { DefaultA, DefaultEmail } from "@cmp/.";
 
 ## Sobre Mí
 
@@ -34,8 +42,15 @@ Creo firmemente en [valores principales], y mi misión es [tu misión profesiona
 
 Me encantaría saber de ti. Puedes contactarme a través de [tu correo electrónico] o seguirme en [tus redes sociales].
 
----
-
-[Tu Nombre]
-[Tu Profesión]
-[Tu Sitio Web]
+- <DefaultA title="PUBLIC_SITE_AUTHOR_NAME" url={PUBLIC_SITE_AUTHOR_NAME}>
+    {PUBLIC_SITE_AUTHOR_NAME}
+  </DefaultA>
+- <DefaultEmail
+    title={PUBLIC_SITE_AUTHOR_NAME}
+    email={PUBLIC_SITE_AUTHOR_EMAIL}
+  >
+    {PUBLIC_SITE_AUTHOR_EMAIL}
+  </DefaultEmail>
+- <DefaultA title="GitHub" url={PUBLIC_SITE_AUTHOR_URL}>
+    {PUBLIC_SITE_AUTHOR_URL}
+  </DefaultA>
