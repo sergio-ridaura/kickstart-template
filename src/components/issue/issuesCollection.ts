@@ -1,6 +1,9 @@
 import { z, defineCollection } from "astro:content";
 import { PUBLIC_SITE_LANG, PUBLIC_SITE_LANG_DEFAULT } from "@src/consts";
 
+/**
+ * Define the issues collection.
+ */
 export const issuesCollection = defineCollection({
   type: "content",
   schema: z.object({

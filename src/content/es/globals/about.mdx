@@ -1,6 +1,6 @@
 ---
 title: Sobre mí
-description: "Hola, soy Sergio Ridaura. Desarrollador full stack: TypeScript, AssemblyScript, Astro, React, Tailwind, Node y MySQL. Desarrollo rápido de aplicaciones y sitios web de alto rendimiento."
+description: "Hola, soy Sergio Ridaura. Desarrollador full stack en aplicaciones y sitios web de alto rendimiento. Con TypeScript, AssemblyScript, Astro, React, Tailwind, Node y MySQL."
 author: Sergio Ridaura
 pubDate: 2024-06-04
 upDate: 2024-06-05
@@ -12,11 +12,13 @@ import {
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
 } from "@src/consts";
-import { DefaultA, DefaultEmail } from "@cmp/.";
+import { DefaultA, DefaultEmail, pastYears, getEgbAge, getEgbYear } from "@cmp/.";
 
 ## Hola, soy Sergio Ridaura
 
-Desde pequeño, siempre me fascinó la informática [una anécdota o interés relacionado con tu campo]. A lo largo de los años, he trabajado en [resumen de tu trayectoria profesional], lo que me ha llevado a [logro o hito significativo].
+Desde pequeño, siempre me ha fascinado la informática. A los {getEgbAge(5)} {getEgbYear(5)} años, comencé a programar en BASIC en un MSX de Philips VG-8020 de 8 bits.
+
+A lo largo de los años, {pastYears(2024, 1997)}, he trabajado en el desarrollo de aplicaciones de escritorio y web, lo que me ha llevado a convertirme en un desarrollador full stack.
 
 Soy desarrollador, apasionado por [tu campo o interés principal]. Con más de 20 años de experiencia en las nuevas tecnologías, he tenido la oportunidad de trabajar en [breve descripción de áreas de trabajo].
 

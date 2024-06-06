@@ -1,3 +1,3 @@
-import randomArray from "./random";
+import { randomArray } from "./random";
 
 export { randomArray };

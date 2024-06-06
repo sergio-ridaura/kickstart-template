@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-const ReactHello = () => {
+/**
+ * Component for rendering a counter with React.js.
+ */
+export const ReactHello = () => {
   const [counter, setCounter] = useState(0);
   return (
     <div className="">
@@ -24,5 +27,3 @@ const ReactHello = () => {
     </div>
   );
 };
-
-export default ReactHello;

@@ -1,6 +1,9 @@
 import React from "react";
 
-interface Props {
+/**
+ * Types for DefaultTsxA.
+ */
+export interface DefaultTsxAType {
   title: string;
   url: string;
   className?: string;
@@ -8,7 +11,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-const DefaultTsxA: React.FC<Props> = ({
+/**
+ * Component for rendering a link with React.js.
+ */
+export const DefaultTsxA: React.FC<DefaultTsxAType> = ({
   title,
   url,
   className,
@@ -26,5 +32,3 @@ const DefaultTsxA: React.FC<Props> = ({
     </a>
   );
 };
-
-export default DefaultTsxA;

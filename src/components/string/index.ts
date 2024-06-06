@@ -1,3 +1,3 @@
-import capitalizeFirstString from "./capitalize";
+import { capitalizeFirstString } from "./capitalize";
 
 export { capitalizeFirstString };

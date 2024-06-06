@@ -1,4 +1,4 @@
 import DefaultEmail from "./default.astro";
-import DefaultTsxEmail from "./defaultTsx";
+import { DefaultTsxEmail, type DefaultTsxEmailType } from "./defaultTsx";
 
-export { DefaultEmail, DefaultTsxEmail };
+export { DefaultEmail, DefaultTsxEmail, type DefaultTsxEmailType };

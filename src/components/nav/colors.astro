@@ -1,21 +1,20 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { randomArray, getSwitchI18n, getUrlI18n, DefaultA } from "..";
-import {} from "@src/i18n/ui";
+import { DefaultA } from "@cmp/a";
+import { getSwitchI18n, getUrlI18n } from "@cmp/i18n";
+import { randomArray } from "@cmp/array";
 
 const switchI18n = getSwitchI18n(Astro.url);
 const home = getUrlI18n(Astro.url);
 
-console.log(home)
-
-interface Link {
+interface LinkType {
   title: string;
   url: string;
 }
 
 interface Props {
   title?: string;
-  links?: Link[];
+  links?: LinkType[];
   color?:
     | "gray"
     | "red"
@@ -30,6 +29,9 @@ interface Props {
     | "random";
 }
 
+/**
+ * Component for rendering a nav with Astro.
+ */
 const { title = PUBLIC_SITE_TITLE, links, color = "random" } = Astro.props;
 
 let selectColor;

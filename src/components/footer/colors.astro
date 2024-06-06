@@ -1,15 +1,17 @@
 ---
 import { PUBLIC_SITE_AUTHOR_NAME } from "@src/consts";
-import { getYear, randomArray, DefaultA } from "..";
+import { getYear } from "@cmp/year";
+import { randomArray } from "@cmp/array";
+import { DefaultA } from "@cmp/a";
 
-interface Link {
+interface LinkType {
   title: string;
   url: string;
 }
 
 interface Props {
   author?: string;
-  links?: Link[];
+  links?: LinkType[];
   color?:
     | "gray"
     | "red"
@@ -24,6 +26,9 @@ interface Props {
     | "random";
 }
 
+/**
+ * Component for rendering a footer with Astro.
+ */
 const {
   author = PUBLIC_SITE_AUTHOR_NAME,
   links,

@@ -24,7 +24,7 @@
   "type": "module",
   "scripts": {
     "clean": "rm -R dist .astro .vercel .netlify;",
-    "dev": "astro dev --host",
+    "dev": "npm run clean; astro telemetry disable; astro dev --host",
     "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build;",
     "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build;",
     "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 PORT=443 node ./dist/server/entry.mjs",
@@ -44,12 +44,12 @@
     "@tailwindcss/typography": "^0.5.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.9.2",
+    "astro": "^4.9.3",
     "dotenv": "^16.4.5",
     "dotenv-cli": "^7.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
 }
