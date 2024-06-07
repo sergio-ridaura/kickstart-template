@@ -32,7 +32,7 @@ const {
   title = PUBLIC_SITE_TITLE,
   author = developer,
   description = PUBLIC_SITE_DESCRIPTION,
-  keywords = PUBLIC_SITE_KEYWORDS,
+  keywords = PUBLIC_SITE_KEYWORDS.join(", "),
   image = "/images/default-placeholder.jpg",
 } = Astro.props;
 
@@ -61,8 +61,8 @@ const socialImageURL = new URL(image, Astro.url);
     />
     <meta name="build" content={String(getFormattedDate())} />
     <meta name="robots" content="index, follow" />
-    <meta name="background_color" content=`${PUBLIC_SITE_BACKGROUND_COLOR}` />
-    <meta name="theme-color" content=`${PUBLIC_SITE_THEME_COLOR}` />
+    <meta name="background_color" content={PUBLIC_SITE_BACKGROUND_COLOR} />
+    <meta name="theme-color" content={PUBLIC_SITE_THEME_COLOR} />
     <ViewTransitions />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
