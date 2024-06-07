@@ -1,4 +1,4 @@
-# Kickstart template v1.8.0
+# Kickstart template v1.9.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 

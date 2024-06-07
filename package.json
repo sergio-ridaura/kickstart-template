@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "description": "Kickstart template for my website developments.",
   "keywords": [
     "react",
@@ -22,14 +22,30 @@
   },
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "kickstart-template": "./dist/cli.js"
+  },
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": "./dist/package.js"
+  },
   "scripts": {
     "clean": "rm -R dist .astro .vercel .netlify",
+    "clean:cli": "",
+    "clean:all": "",
     "dev": "npm run clean; astro telemetry disable; astro dev --host",
+    "dev:cli": "npx vite-node --watch src/cli.ts",
     "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build",
     "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build",
+    "build:cli": "",
+    "build:all": "",
     "preview": "SERVER_KEY_PATH=./private/localhost-key.pem SERVER_CERT_PATH=./private/localhost.pem HOST=0.0.0.0 PORT=443 npx dotenv-cli -e .env.local -- node ./dist/server/entry.mjs",
     "start": "npm run preview",
-    "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/react @astrojs/rss @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography @types/react @types/react-dom astro dotenv dotenv-cli react react-dom tailwindcss typescript"
+    "start:cli": "npx vite-node src/cli.ts",
+    "test": "",
+    "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/react @astrojs/rss @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography @types/react @types/react-dom astro dotenv dotenv-cli react react-dom tailwindcss typescript vite-node"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -50,6 +66,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite-node": "^1.6.0"
   }
 }
