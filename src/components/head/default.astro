@@ -11,7 +11,7 @@ import {
   PUBLIC_SITE_BACKGROUND_COLOR,
   PUBLIC_SITE_THEME_COLOR,
 } from "@src/consts";
-import { getFormattedDate } from "..";
+import { getFormattedDate } from "@cmp/date";
 
 const developer = `${PUBLIC_DEV_AUTHOR_NAME} ${PUBLIC_DEV_AUTHOR_URL} ${PUBLIC_DEV_AUTHOR_EMAIL}`;
 
@@ -24,6 +24,9 @@ interface Props {
   image?: string;
 }
 
+/**
+ * Component for rendering a head with Astro.
+ */
 const {
   lang = Astro.currentLocale,
   title = PUBLIC_SITE_TITLE,
@@ -90,13 +93,3 @@ const socialImageURL = new URL(image, Astro.url);
     <slot />
   </body>
 </html>
-
-<style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  body {
-    @apply bg-bg_light dark:bg-bg_dark text-tx_light dark:text-tx_dark;
-  }
-</style>

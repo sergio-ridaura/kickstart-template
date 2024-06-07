@@ -1,18 +1,20 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { randomArray, getSwitchI18n, DefaultA } from "..";
-import {} from "@src/i18n/ui";
+import { DefaultA } from "@cmp/a";
+import { getSwitchI18n, getUrlI18n } from "@cmp/i18n";
+import { randomArray } from "@cmp/array";
 
 const switchI18n = getSwitchI18n(Astro.url);
+const home = getUrlI18n(Astro.url);
 
-interface Link {
+interface LinkType {
   title: string;
   url: string;
 }
 
 interface Props {
   title?: string;
-  links?: Link[];
+  links?: LinkType[];
   color?:
     | "gray"
     | "red"
@@ -27,6 +29,9 @@ interface Props {
     | "random";
 }
 
+/**
+ * Component for rendering a nav with Astro.
+ */
 const { title = PUBLIC_SITE_TITLE, links, color = "random" } = Astro.props;
 
 let selectColor;
@@ -103,7 +108,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
       >
         <DefaultA
           title={title}
-          url="/"
+          url={`${home}/`}
           className={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}
           prefetch={true}
         >
@@ -123,7 +128,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
                     className={`px-0 py-1 ${linkClass} transition-colors duration-300`}
                     prefetch={true}
                   >
-                    <p class={`px-2 py-1 inline-block ${linkClass}`}>
+                    <p class={`px-2 py-1 inline-block font-semibold ${linkClass}`}>
                       {link.title}
                     </p>
                   </DefaultA>
@@ -136,7 +141,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
               prefetch={true}
             >
               <p
-                class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${linkClass}`}
+                class={`px-2 py-1 text-sm border rounded-xl inline-block font-semibold ${hrClass} ${linkClass}`}
               >
                 {switchI18n?.label}
               </p>
@@ -160,7 +165,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
               className="block px-2 py-1 transition-colors duration-300"
               prefetch={true}
             >
-              <p class={`px-2 py-1 inline-block ${likMobileClass}`}>
+              <p class={`px-2 py-1 inline-block font-semibold ${likMobileClass}`}>
                 {link.title}
               </p>
             </DefaultA>
@@ -173,7 +178,7 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
         prefetch={true}
       >
         <p
-          class={`px-2 py-1 text-sm border rounded-xl inline-block ${hrClass} ${likMobileClass}`}
+          class={`px-2 py-1 text-sm border rounded-xl inline-block font-semibold ${hrClass} ${likMobileClass}`}
         >
           {switchI18n?.label}
         </p>

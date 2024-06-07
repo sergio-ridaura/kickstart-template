@@ -1,0 +1,56 @@
+---
+title: About
+description: "Hello, I'm Sergio Ridaura. A full stack developer specializing in TypeScript, AssemblyScript, Astro, React, Tailwind, Node, and MySQL. I create high-performance applications and websites."
+author: Sergio Ridaura
+pubDate: 2024-06-04
+upDate: 2024-06-07
+image: /images/about.jpg
+---
+
+import {
+  PUBLIC_SITE_AUTHOR_NAME,
+  PUBLIC_SITE_AUTHOR_URL,
+  PUBLIC_SITE_AUTHOR_EMAIL,
+} from "@src/consts";
+import {
+  DefaultA,
+  DefaultEmail,
+  pastYears,
+  getEgbAge,
+  getEgbYear,
+  getYear,
+} from "@cmp/.";
+
+## Hello, I am Sergio Ridaura
+
+Since I was a child, I have always been fascinated by computing. At the age of {getEgbAge(5)}, in {getEgbYear(1976, 5)}, I started programming in BASIC on a Philips VG-8020 8-bit MSX.
+
+Throughout my {pastYears(getYear(), 1997)} years of experience, I have worked on developing desktop and web applications across multiple sectors such as healthcare, education, energy, advertising, banking and more.
+
+This experience has led me to become a full-stack JavaScript developer, specializing in high-performance applications and websites. I am always exploring new ways to optimize and improve the user experience in the web browser as an operating system.
+
+## Technologies
+
+- **Programming Languages**: JavaScript, TypeScript and AssemblyScript.
+- **Frontend Development**: HTML5, CSS3 and SVG.
+- **Frontend Frameworks**: Astro, React.js, TailwindCSS, Three.js and WebXR.
+- **Backend Development**: Node.js, REST API, MySQL and Vitest.
+- **Development Tools**: Git, GitHub, Docker, Markdown, Scrum and Kanban.
+- **Shell**: Linux and Bash.
+
+## Contact
+
+If you want to learn more about my work or have any questions, feel free to get in touch with me:
+
+- <DefaultA title="PUBLIC_SITE_AUTHOR_NAME" url={PUBLIC_SITE_AUTHOR_NAME}>
+    {PUBLIC_SITE_AUTHOR_NAME}
+  </DefaultA>
+- <DefaultEmail
+    title={PUBLIC_SITE_AUTHOR_NAME}
+    email={PUBLIC_SITE_AUTHOR_EMAIL}
+  >
+    {PUBLIC_SITE_AUTHOR_EMAIL}
+  </DefaultEmail>
+- <DefaultA title="GitHub" url={PUBLIC_SITE_AUTHOR_URL}>
+    {PUBLIC_SITE_AUTHOR_URL}
+  </DefaultA>

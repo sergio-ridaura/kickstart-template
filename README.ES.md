@@ -2,9 +2,9 @@
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
-## Description
+## Descripción
 
-Kickstart template for my website developments.
+Plantilla Kickstart para los desarrollos de mi sitio web.
 
 <p style="display:flex; flex-direction:row; align-items: flex-start; flex-wrap: wrap;">
   <a href="https://www.typescriptlang.org/">
@@ -30,33 +30,33 @@ Kickstart template for my website developments.
   </a>
 </p>
 
-Template developed with [Astro](https://astro.build/), featuring static rendering (SSG), client-side rendering (CSR), and server-side rendering (SSR), with integration of [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [React.js](https://es.react.dev/), [Node.js](https://nodejs.org/), [MySQL](https://www.mysql.com/) and [AssemblyScript](https://www.assemblyscript.org/).
+Plantilla desarrollada con [Astro](https://astro.build/), que incluye renderizado estático (SSG), renderizado del lado del cliente (CSR) y renderizado del lado del servidor (SSR), con integración de [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [React.js](https://es.react.dev/), [Node.js](https://nodejs.org/), [MySQL](https://www.mysql.com/) y [AssemblyScript](https://www.assemblyscript.org/).
 
-For versatile development of a wide range of websites and web applications, including blogs, landing pages, informational sites, portfolios, social networks, e-commerce, web games, command-line applications (CLI), export modules, REST APIs, among others.
+Para el desarrollo versátil de una amplia gama de sitios web y aplicaciones web, incluidos blogs, páginas de destino, sitios informativos, portafolios, redes sociales, comercio electrónico, juegos web, aplicaciones de línea de comandos (CLI), módulos de exportación, API REST, entre otros.
 
-## New Project
+## Nuevo proyecto
 
-Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://github.com/) with this template.
+Clonar el proyecto con [Git](https://git-scm.com/) o use [GitHub](https://github.com/) con esta plantilla.
 
 ```console
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, and `.env` files to your needs.
+Adapte los archivos `README.md`, `LICENSE`, `docker-compose.yml`, `package.json` y `.env` a sus necesidades.
 
-Start the container with [Docker Compose](https://docs.docker.com/compose/).
+Inicie el contenedor con [Docker Compose](https://docs.docker.com/compose/).
 
 ```console
 docker-compose up -d
 ```
 
-Access the [Node.js](https://nodejs.org/) container. For example:
+Acceda al contenedor [Node.js](https://nodejs.org/). Por ejemplo:
 
 ```console
 docker exec -it kickstart-templete_node bash
 ```
 
-Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
+Actualice [Npm](https://www.npmjs.com/) y [Node.js](https://nodejs.org/).
 
 ```console
 npm update -g npm
@@ -64,53 +64,53 @@ npm install -g n
 n lts
 ```
 
-Add project dependencies.
+Agregar dependencias del proyecto.
 
 ```console
 npm install
 ```
 
-If necessary, repair the user's permissions.
+Si es necesario, repare los permisos del usuario.
 
 ```console
 sudo chown -R $USER .
 ```
 
-## Develop
+## Desarrollar
 
-Development command.
+Comando de desarrollo.
 
 ```console
 npm run dev
 ```
 
-Visit the page http://localhost:4321/ to see the result.
+Visite la página http://localhost:4321/ para ver el resultado.
 
-## Preview
+## Vista previa
 
-Build the application.
+Construya la aplicación.
 
 ```console
 npm run build:local
 ```
 
-Run the built application.
+Ejecute la aplicación construida.
 
 ```console
 npm run preview
 ```
 
-Visit the page https://localhost/ to see the result.
+Visita la página https://localhost/ para ver el resultado.
 
-## Deploy in server
+## Implementar en el servidor
 
-Clone the project with [Git](https://git-scm.com/), for example:
+Clona el proyecto con [Git](https://git-scm.com/), por ejemplo:
 
 ```console
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Update [Npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/).
+Actualice [Npm](https://www.npmjs.com/) y [Node.js](https://nodejs.org/).
 
 ```console
 npm update -g npm
@@ -118,13 +118,13 @@ npm install -g n
 n lts
 ```
 
-Add project dependencies.
+Agregar dependencias del proyecto.
 
 ```console
 npm install
 ```
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
 
 ```console
 PUBLIC_SITE=https://localhost
@@ -134,7 +134,7 @@ PUBLIC_BACKGROUND_COLOR="#ffffff"
 PUBLIC_THEME_COLOR="#000000"
 ```
 
-Adapt the `.env` file to your site, with the private variables.
+Adapte el archivo `.env` a su sitio, con las variables privadas.
 
 Build the application.
 
@@ -148,11 +148,11 @@ Run the built application.
 npm run start
 ```
 
-Visit the page to see the result, for example: http://localhost/.
+Visite la página para ver el resultado, por ejemplo: http://localhost/.
 
-## Deploy in Netlify
+## Implementar en Netlify
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.netlify.app
@@ -162,11 +162,11 @@ PUBLIC_BACKGROUND_COLOR=#ffffff
 PUBLIC_THEME_COLOR=#000000
 ```
 
-Private environment variables must be managed from the [Netlity](https://www.netlify.com/) tools.
+Las variables de entorno privadas deben gestionarse desde las herramientas de [Netlity](https://www.netlify.com/).
 
-## Deploy in Vercel
+## Implementar en Vercel
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
@@ -176,11 +176,11 @@ PUBLIC_BACKGROUND_COLOR="#ffffff"
 PUBLIC_THEME_COLOR="#000000"
 ```
 
-Private environment variables must be managed from the [Vercel](https://vercel.com/) tools.
+Las variables de entorno privadas deben administrarse desde las herramientas de [Vercel](https://vercel.com/).
 
-## Author
+## Autor
 
-Full stack developer: TypeScript, AssemblyScript, Astro, React, Tailwind, Node and MySQL.
+Desarrollador full stack: TypeScript, AssemblyScript, Astro, React, Tailwind, Node y MySQL.
 
 <p style="display:flex; flex-direction:row; align-items: flex-start; flex-wrap: wrap;">
   <a href="https://www.typescriptlang.org/">
@@ -206,7 +206,7 @@ Full stack developer: TypeScript, AssemblyScript, Astro, React, Tailwind, Node a
   </a>
 </p>
 
-Fast development of high-performance web applications and sites.
+Desarrollo rápido de aplicaciones y sitios web de alto rendimiento.
 
 <p style="display:flex; flex-direction:row; align-items: flex-start; flex-wrap: wrap;">
   <a href="mailto:sergio.ridaura@outlook.com">

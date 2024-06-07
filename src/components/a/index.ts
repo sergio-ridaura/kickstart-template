@@ -1,4 +1,4 @@
 import DefaultA from "./default.astro";
-import DefaultTsxA from "./defaultTsx";
+import { DefaultTsxA, type DefaultTsxAType } from "./defaultTsx";
 
-export { DefaultA, DefaultTsxA };
+export { DefaultA, DefaultTsxA, type DefaultTsxAType };

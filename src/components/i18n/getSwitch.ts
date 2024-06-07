@@ -1,7 +1,10 @@
 import { defaultLang, languages } from "@src/i18n/ui";
-import { getLangI18n } from ".";
+import { getLangI18n } from "./getLang";
 
-export default function getSwitchI18n(url: URL) {
+/**
+ * Generates a URL object and label for language switching based on the current URL and language.
+ */
+export const getSwitchI18n = (url: URL) => {
   const lang = getLangI18n(url);
   for (const [key, value] of Object.entries(languages)) {
     if (key !== lang) {
@@ -21,4 +24,4 @@ export default function getSwitchI18n(url: URL) {
       }
     }
   }
-}
+};

@@ -1,15 +1,17 @@
 ---
 import { PUBLIC_SITE_AUTHOR_NAME } from "@src/consts";
-import { getYear, randomArray, DefaultA } from "..";
+import { getYear } from "@cmp/year";
+import { randomArray } from "@cmp/array";
+import { DefaultA } from "@cmp/a";
 
-interface Link {
+interface LinkType {
   title: string;
   url: string;
 }
 
 interface Props {
   author?: string;
-  links?: Link[];
+  links?: LinkType[];
   color?:
     | "gray"
     | "red"
@@ -24,6 +26,9 @@ interface Props {
     | "random";
 }
 
+/**
+ * Component for rendering a footer with Astro.
+ */
 const {
   author = PUBLIC_SITE_AUTHOR_NAME,
   links,
@@ -73,7 +78,7 @@ const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
   <hr class={`my-6 ${hrClass}`} />
 
   <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-    <p class={`mt-4 ${pClass}`}>
+    <p class={`mt-4 font-semibold ${pClass}`}>
       © Copyright {getYear()}. {author}.
     </p>
 
@@ -85,7 +90,7 @@ const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
             <DefaultA
               title={link.title}
               url={link.url}
-              className={`mx-2 ${linkClass} transition-colors duration-300`}
+              className={`mx-2 font-semibold ${linkClass} transition-colors duration-300`}
               prefetch={true}
             >
               {link.title}

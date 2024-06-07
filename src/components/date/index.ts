@@ -1,3 +1,3 @@
-import getFormattedDate from "./getFormatted";
+import { getFormattedDate } from "./getFormatted";
 
 export { getFormattedDate };

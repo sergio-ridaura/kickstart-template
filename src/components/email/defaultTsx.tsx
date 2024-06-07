@@ -1,13 +1,19 @@
 import React from "react";
 
-interface Props {
+/**
+ * Types for DefaultTsxEmail.
+ */
+export interface DefaultTsxEmailType {
   title: string;
   email: string;
   className?: string;
   children: React.ReactNode;
 }
 
-const DefaultTsxEmail: React.FC<Props> = ({
+/**
+ * Component for rendering a email link with React.js.
+ */
+export const DefaultTsxEmail: React.FC<DefaultTsxEmailType> = ({
   title,
   email,
   className,
@@ -19,5 +25,3 @@ const DefaultTsxEmail: React.FC<Props> = ({
     </a>
   );
 };
-
-export default DefaultTsxEmail;
