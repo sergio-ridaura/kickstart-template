@@ -1,4 +1,4 @@
-# Kickstart template v1.8.0
+# Kickstart template v1.8.1
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -42,7 +42,7 @@ Clone the project with [Git](https://git-scm.com/) or use [GitHub](https://githu
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, and `.env` files to your needs.
+Adapt the `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, `.env` and `.env.prod` files to your needs.
 
 Start the container with [Docker Compose](https://docs.docker.com/compose/).
 
@@ -124,17 +124,15 @@ Add project dependencies.
 npm install
 ```
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapt the `.env` and `.env.prod` file to your site.
 
 ```console
 PUBLIC_SITE=https://localhost
 PUBLIC_DOMAIN=localhost
 PUBLIC_ADAPTER=server
-PUBLIC_BACKGROUND_COLOR="#ffffff"
-PUBLIC_THEME_COLOR="#000000"
+PUBLIC_BACKGROUND_COLOR=ffffff
+PUBLIC_THEME_COLOR=000000
 ```
-
-Adapt the `.env` file to your site, with the private variables.
 
 Build the application.
 
@@ -152,28 +150,28 @@ Visit the page to see the result, for example: http://localhost/.
 
 ## Deploy in Netlify
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapt the `.env` and `.env.prod` file to your site.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.netlify.app
 PUBLIC_DOMAIN=kickstart-template-demo.netlify.app
 PUBLIC_ADAPTER=netlify
-PUBLIC_BACKGROUND_COLOR=#ffffff
-PUBLIC_THEME_COLOR=#000000
+PUBLIC_BACKGROUND_COLOR=ffffff
+PUBLIC_THEME_COLOR=000000
 ```
 
 Private environment variables must be managed from the [Netlity](https://www.netlify.com/) tools.
 
 ## Deploy in Vercel
 
-Adapt the `.env.prod` file to your site, with the public variables.
+Adapt the `.env` and `.env.prod` file to your site.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
 PUBLIC_DOMAIN=kickstart-template-demo.vercel.app
 PUBLIC_ADAPTER=vercel
-PUBLIC_BACKGROUND_COLOR="#ffffff"
-PUBLIC_THEME_COLOR="#000000"
+PUBLIC_BACKGROUND_COLOR=ffffff
+PUBLIC_THEME_COLOR=000000
 ```
 
 Private environment variables must be managed from the [Vercel](https://vercel.com/) tools.

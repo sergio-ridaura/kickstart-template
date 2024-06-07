@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Kickstart template for my website developments.",
   "keywords": [
     "react",
@@ -23,11 +23,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "clean": "rm -R dist .astro .vercel .netlify;",
+    "clean": "rm -R dist .astro .vercel .netlify",
     "dev": "npm run clean; astro telemetry disable; astro dev --host",
-    "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build;",
-    "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build;",
-    "preview": "SERVER_KEY_PATH=./private/key.pem SERVER_CERT_PATH=./private/cert.pem HOST=0.0.0.0 PORT=443 node ./dist/server/entry.mjs",
+    "build": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.prod -- astro build",
+    "build:local": "npm run clean; astro telemetry disable; astro check; npx dotenv-cli -e .env.local -- astro build",
+    "preview": "SERVER_KEY_PATH=./private/localhost-key.pem SERVER_CERT_PATH=./private/localhost.pem HOST=0.0.0.0 PORT=443 npx dotenv-cli -e .env.local -- node ./dist/server/entry.mjs",
     "start": "npm run preview",
     "update": "npm i @astrojs/check @astrojs/mdx @astrojs/netlify @astrojs/node @astrojs/react @astrojs/rss @astrojs/sitemap @astrojs/tailwind @astrojs/vercel @tailwindcss/typography @types/react @types/react-dom astro dotenv dotenv-cli react react-dom tailwindcss typescript"
   },
