@@ -78,7 +78,7 @@ const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
   <hr class={`my-6 ${hrClass}`} />
 
   <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-    <p class={`mt-4 ${pClass}`}>
+    <p class={`mt-4 font-semibold ${pClass}`}>
       © Copyright {getYear()}. {author}.
     </p>
 
@@ -90,7 +90,7 @@ const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
             <DefaultA
               title={link.title}
               url={link.url}
-              className={`mx-2 ${linkClass} transition-colors duration-300`}
+              className={`mx-2 font-semibold ${linkClass} transition-colors duration-300`}
               prefetch={true}
             >
               {link.title}

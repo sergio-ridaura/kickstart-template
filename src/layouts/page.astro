@@ -1,6 +1,6 @@
 ---
 import Layout from "@src/layouts/index.astro";
-import { getFormattedDate } from "@cmp/.";
+import { getFormattedDate, getLangI18n } from "@cmp/.";
 
 interface Props {
   entry: any;
@@ -21,7 +21,7 @@ const { Content } = await entry.render();
           {entry.data?.upDate ? "Updated" : "Created"}: {
             getFormattedDate(
               entry.data?.upDate ? entry.data.upDate : entry.data.pubDate,
-              "es"
+              getLangI18n(Astro.url)
             )
           }
         </span>

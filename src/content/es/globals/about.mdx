@@ -1,9 +1,9 @@
 ---
 title: Sobre mí
-description: "Hola, soy Sergio Ridaura. Desarrollador full stack en aplicaciones y sitios web de alto rendimiento. Con TypeScript, AssemblyScript, Astro, React, Tailwind, Node y MySQL."
+description: "Hello, I am Sergio Ridaura. Full stack developer specializing in high-performance applications and websites. Proficient in JavaScript, TypeScript, AssemblyScript, Astro, React, Node, and MySQL."
 author: Sergio Ridaura
 pubDate: 2024-06-04
-upDate: 2024-06-05
+upDate: 2024-06-07
 image: /images/about.jpg
 ---
 
@@ -12,29 +12,35 @@ import {
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
 } from "@src/consts";
-import { DefaultA, DefaultEmail, pastYears, getEgbAge, getEgbYear } from "@cmp/.";
+import {
+  DefaultA,
+  DefaultEmail,
+  pastYears,
+  getEgbAge,
+  getEgbYear,
+  getYear,
+} from "@cmp/.";
 
 ## Hola, soy Sergio Ridaura
 
-Desde pequeño, siempre me ha fascinado la informática. A los {getEgbAge(5)} {getEgbYear(5)} años, comencé a programar en BASIC en un MSX de Philips VG-8020 de 8 bits.
+Desde pequeño, siempre me ha fascinado la informática. A los {getEgbAge(5)} años, en {getEgbYear(1976, 5)}, comencé a programar en BASIC en un MSX de Philips VG-8020 de 8 bits.
 
-A lo largo de los años, {pastYears(2024, 1997)}, he trabajado en el desarrollo de aplicaciones de escritorio y web, lo que me ha llevado a convertirme en un desarrollador full stack.
+A lo largo de mis {pastYears(getYear(), 1997)} años de experiencia, he trabajado en el desarrollo de aplicaciones y sitios web, en multiples sectores como la sanidad, la educación, el energético, la publicidad, la banca, entre otros.
 
-Soy desarrollador, apasionado por [tu campo o interés principal]. Con más de 20 años de experiencia en las nuevas tecnologías, he tenido la oportunidad de trabajar en [breve descripción de áreas de trabajo].
+Esta experiencia me ha llevado a convertirme en un desarrollador full stack en JavaScript, especializado en aplicaciones y sitios web de alto rendimiento. Explorando nuevas formas de optimizar y mejorar la experiencia del usuario en el navegador web como sistema operativo.
 
-## Misión y Valores
+## Tecnologías
 
-Creo firmemente en [valores principales], y mi misión es [tu misión profesional]. Mi trabajo se enfoca en [explicación breve de cómo aplicas tus valores en tu trabajo].
-
-## Habilidades y Experiencia
-
-- **Habilidad 1:** Descripción breve de tu habilidad y cómo la has aplicado.
-- **Habilidad 2:** Descripción breve de tu habilidad y cómo la has aplicado.
-- **Habilidad 3:** Descripción breve de tu habilidad y cómo la has aplicado.
+- **Lenguajes de Programación**: JavaScript, TypeScript y AssemblyScript.
+- **Desarrollo Frontend**: HTML5, CSS3 y SVG.
+- **Frameworks Frontend**: Astro, React.js, TailwindCSS, Three.js y WebXR.
+- **Desarrollo Backend**: Node.js, API REST, MySQL y Vitest.
+- **Herramientas de Desarrollo**: Git, GitHub, Docker, Markdown, Scrum y Kanban.
+- **Shell**: Linux y Bash.
 
 ## Contacto
 
-Me encantaría saber de ti. Puedes contactarme a través de <DefaultEmail title={PUBLIC_SITE_AUTHOR_NAME} email={PUBLIC_SITE_AUTHOR_EMAIL} >{PUBLIC_SITE_AUTHOR_EMAIL}</DefaultEmail> o en las siguientes formas de contacto.
+Si deseas conocer más sobre mi trabajo o tienes alguna consulta, no dudes en ponerte en contacto conmigo:
 
 - <DefaultA title="PUBLIC_SITE_AUTHOR_NAME" url={PUBLIC_SITE_AUTHOR_NAME}>
     {PUBLIC_SITE_AUTHOR_NAME}
