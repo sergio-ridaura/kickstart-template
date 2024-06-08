@@ -1,4 +1,4 @@
-# Kickstart template v1.8.1
+# Kickstart template v1.9.0
 
 _Copyright (c) 2024 [Sergio Ridaura](https://github.com/sergio-ridaura)._
 
@@ -130,8 +130,6 @@ Adapt the `.env` and `.env.prod` file to your site.
 PUBLIC_SITE=https://localhost
 PUBLIC_DOMAIN=localhost
 PUBLIC_ADAPTER=server
-PUBLIC_BACKGROUND_COLOR=ffffff
-PUBLIC_THEME_COLOR=000000
 ```
 
 Build the application.
@@ -156,8 +154,6 @@ Adapt the `.env` and `.env.prod` file to your site.
 PUBLIC_SITE=https://kickstart-template-demo.netlify.app
 PUBLIC_DOMAIN=kickstart-template-demo.netlify.app
 PUBLIC_ADAPTER=netlify
-PUBLIC_BACKGROUND_COLOR=ffffff
-PUBLIC_THEME_COLOR=000000
 ```
 
 Private environment variables must be managed from the [Netlity](https://www.netlify.com/) tools.
@@ -170,8 +166,6 @@ Adapt the `.env` and `.env.prod` file to your site.
 PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
 PUBLIC_DOMAIN=kickstart-template-demo.vercel.app
 PUBLIC_ADAPTER=vercel
-PUBLIC_BACKGROUND_COLOR=ffffff
-PUBLIC_THEME_COLOR=000000
 ```
 
 Private environment variables must be managed from the [Vercel](https://vercel.com/) tools.

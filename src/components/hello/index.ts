@@ -1,3 +1,4 @@
 import { ReactHello } from "./reactHello";
+import { typeHello } from "./typeHello";
 
-export { ReactHello };
+export { ReactHello, typeHello };

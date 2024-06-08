@@ -15,4 +15,4 @@ endDate: 2024-05-03
 
 ## Describe the feature
 
-Add Privacy policy content in spanish.
+Add Privacy policy page content in spanish.

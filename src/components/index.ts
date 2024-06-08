@@ -1,23 +1,38 @@
-import { DefaultA, DefaultTsxA, type DefaultTsxAType } from "./a";
-import { getEgbAge, type GetEgbAgeType } from "./age";
-import { randomArray } from "./array";
-import { getFormattedDate } from "./date";
-import { developsCollection } from "./develop";
 import {
+  capitalizeFirstString,
+  getEgbAge,
+  type GetEgbAgeType,
+  getEgbYear,
+  getFormattedDate,
+  getLangI18n,
+  getSwitchI18n,
+  getUrlI18n,
+  getYear,
+  pastYears,
+  randomArray,
+  translateI18n,
+  typeHello,
+} from "./ts";
+
+import {
+  ColorsFooterLayout,
+  ColorsNav,
+  DefaultA,
   DefaultEmail,
+  developsCollection,
+  issuesCollection,
+  milestonesCollection,
+  postsCollection,
+  DefaultHeadLayout,
+} from "./astro";
+
+import {
+  DefaultTsxA,
+  type DefaultTsxAType,
   DefaultTsxEmail,
   type DefaultTsxEmailType,
-} from "./email";
-import { ColorsFooterLayout } from "./footer";
-import { DefaultHeadLayout } from "./head";
-import { ReactHello } from "./hello";
-import { getLangI18n, getSwitchI18n, getUrlI18n, translateI18n } from "./i18n";
-import { issuesCollection } from "./issue";
-import { milestonesCollection } from "./milestone";
-import { ColorsNav } from "./nav";
-import { postsCollection } from "./post";
-import { capitalizeFirstString } from "./string";
-import { getYear, pastYears, getEgbYear } from "./year";
+  ReactHello,
+} from "./tsx";
 
 export {
   capitalizeFirstString,
@@ -46,4 +61,5 @@ export {
   randomArray,
   ReactHello,
   translateI18n,
+  typeHello,
 };
