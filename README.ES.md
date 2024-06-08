@@ -42,7 +42,7 @@ Clonar el proyecto con [Git](https://git-scm.com/) o use [GitHub](https://github
 git clone https://github.com/sergio-ridaura/kickstart-template
 ```
 
-Adapte los archivos `README.md`, `LICENSE`, `docker-compose.yml`, `package.json` y `.env` a sus necesidades.
+Adapte los archivos `README.md`, `LICENSE`, `docker-compose.yml`, `package.json`, `.env` y `env.prod` a sus necesidades.
 
 Inicie el contenedor con [Docker Compose](https://docs.docker.com/compose/).
 
@@ -124,17 +124,13 @@ Agregar dependencias del proyecto.
 npm install
 ```
 
-Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
+Adapta el archivo `.env` y `.env.prod` a tu sitio.
 
 ```console
 PUBLIC_SITE=https://localhost
 PUBLIC_DOMAIN=localhost
 PUBLIC_ADAPTER=server
-PUBLIC_BACKGROUND_COLOR="#ffffff"
-PUBLIC_THEME_COLOR="#000000"
 ```
-
-Adapte el archivo `.env` a su sitio, con las variables privadas.
 
 Build the application.
 
@@ -152,28 +148,24 @@ Visite la página para ver el resultado, por ejemplo: http://localhost/.
 
 ## Implementar en Netlify
 
-Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
+Adapta el archivo `.env` y `.env.prod` a tu sitio.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.netlify.app
 PUBLIC_DOMAIN=kickstart-template-demo.netlify.app
 PUBLIC_ADAPTER=netlify
-PUBLIC_BACKGROUND_COLOR=#ffffff
-PUBLIC_THEME_COLOR=#000000
 ```
 
 Las variables de entorno privadas deben gestionarse desde las herramientas de [Netlity](https://www.netlify.com/).
 
 ## Implementar en Vercel
 
-Adapta el archivo `.env.prod` a tu sitio, con las variables públicas.
+Adapta el archivo `.env` y `.env.prod` a tu sitio.
 
 ```console
 PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
 PUBLIC_DOMAIN=kickstart-template-demo.vercel.app
 PUBLIC_ADAPTER=vercel
-PUBLIC_BACKGROUND_COLOR="#ffffff"
-PUBLIC_THEME_COLOR="#000000"
 ```
 
 Las variables de entorno privadas deben administrarse desde las herramientas de [Vercel](https://vercel.com/).

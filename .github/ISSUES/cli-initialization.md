@@ -1,18 +1,18 @@
 ---
 name: Issue
 about: Suggest an idea for this project
-title: Privacy policy
+title: CLI initialization
 labels: enhancement
 assignees: sergio-ridaura
 project: kickstart-template
-milestone: Contents initialization
+milestone: CLI initialization
 status: backlog
-efforts: 5
-startDate: 2024-05-28
-dueDate: 2024-05-29
-endDate: 2024-05-29
+efforts: 4
+startDate: 2024-06-08
+dueDate: 2024-06-09
+endDate: 2024-06-09
 ---
 
 ## Describe the feature
 
-Add Privacy policy page content.
+Add CLI application to the project.
