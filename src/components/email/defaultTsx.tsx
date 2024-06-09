@@ -3,7 +3,7 @@ import React from "react";
 /**
  * Types for DefaultTsxEmail.
  */
-export interface DefaultTsxEmailType {
+interface DefaultTsxEmailType {
   title: string;
   email: string;
   className?: string;
@@ -13,7 +13,7 @@ export interface DefaultTsxEmailType {
 /**
  * Component for rendering a email link with React.js.
  */
-export const DefaultTsxEmail: React.FC<DefaultTsxEmailType> = ({
+const DefaultTsxEmail: React.FC<DefaultTsxEmailType> = ({
   title,
   email,
   className,
@@ -25,3 +25,5 @@ export const DefaultTsxEmail: React.FC<DefaultTsxEmailType> = ({
     </a>
   );
 };
+
+export { type DefaultTsxEmailType, DefaultTsxEmail };

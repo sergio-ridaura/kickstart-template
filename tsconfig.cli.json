@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES6",
+    "outDir": "./dist/server",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@src/*": ["./src/*"],
+      "@cmp/*": ["./src/components/*"],
+      "@pbl/*": ["./public/*"]
+    }
+  },
+  "include": ["src/cli.ts"]
+}

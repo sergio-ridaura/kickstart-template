@@ -1,6 +1,7 @@
 ---
 import Layout from "@src/layouts/index.astro";
-import { getFormattedDate, getLangI18n } from "@cmp/.";
+import getFormattedDate from "@cmp/date/getFormatted";
+import getLangI18n from "@cmp/i18n/getLang";
 
 interface Props {
   entry: any;

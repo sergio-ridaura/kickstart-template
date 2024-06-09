@@ -4,7 +4,7 @@ import { PUBLIC_SITE_LANG, PUBLIC_SITE_LANG_DEFAULT } from "@src/consts";
 /**
  * Define the posts collection.
  */
-export const postsCollection = defineCollection({
+const postsCollection = defineCollection({
   type: "content",
   schema: z.object({
     isDraft: z.boolean().default(false),
@@ -18,3 +18,5 @@ export const postsCollection = defineCollection({
     image: z.string(),
   }),
 });
+
+export default postsCollection;

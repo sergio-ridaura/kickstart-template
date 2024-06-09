@@ -1,3 +1,3 @@
-import { typeHello } from "@cmp/ts";
+import typeHello from "./components/hello/typeHello.js";
 
 console.log(typeHello("in CLI"));

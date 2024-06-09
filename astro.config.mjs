@@ -25,6 +25,7 @@ const conf = {
       es: "en",
     },
   },
+  excludeFiles: ["./src/wasm.ts", "./src/cli.ts"],
 };
 
 if (process.env.PUBLIC_SITE_ADAPTER === "vercel") {

@@ -3,7 +3,7 @@ import React from "react";
 /**
  * Types for DefaultTsxA.
  */
-export interface DefaultTsxAType {
+interface DefaultTsxAType {
   title: string;
   url: string;
   className?: string;
@@ -14,7 +14,7 @@ export interface DefaultTsxAType {
 /**
  * Component for rendering a link with React.js.
  */
-export const DefaultTsxA: React.FC<DefaultTsxAType> = ({
+const DefaultTsxA: React.FC<DefaultTsxAType> = ({
   title,
   url,
   className,
@@ -32,3 +32,5 @@ export const DefaultTsxA: React.FC<DefaultTsxAType> = ({
     </a>
   );
 };
+
+export { type DefaultTsxAType, DefaultTsxA };

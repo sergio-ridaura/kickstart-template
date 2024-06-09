@@ -4,7 +4,7 @@ import { PUBLIC_SITE_LANG, PUBLIC_SITE_LANG_DEFAULT } from "@src/consts";
 /**
  * Define the develops collection.
  */
-export const developsCollection = defineCollection({
+const developsCollection = defineCollection({
   type: "content",
   schema: z.object({
     isDraft: z.boolean().default(false),
@@ -25,3 +25,5 @@ export const developsCollection = defineCollection({
     efforts: z.number().optional(),
   }),
 });
+
+export default developsCollection;

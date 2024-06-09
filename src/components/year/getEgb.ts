@@ -1,9 +1,9 @@
-import { getEgbAge, type GetEgbAgeType } from "@cmp/age";
+import { getEgbAge, type GetEgbAgeType } from "@cmp/age/getEgb";
 
 /**
  * Calculates the year a person started grade EGB (Educación General Básica) based on birth year and grade.
  */
-export const getEgbYear = (
+const getEgbYear = (
   birthYear: number,
   grade: number | undefined = 1
 ): number => {
@@ -13,3 +13,5 @@ export const getEgbYear = (
 
   return birthYear + startAge;
 };
+
+export default getEgbYear;

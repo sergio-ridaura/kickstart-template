@@ -1,8 +1,9 @@
 ---
 import { PUBLIC_SITE_TITLE } from "@src/consts";
-import { DefaultA } from "@cmp/a";
-import { getSwitchI18n, getUrlI18n } from "@cmp/i18n";
-import { randomArray } from "@cmp/array";
+import DefaultA from "@cmp/a/default.astro";
+import getSwitchI18n from "@cmp/i18n/getSwitch";
+import getUrlI18n from "@cmp/i18n/getUrl";
+import randomArray from "@cmp/array/random";
 
 const switchI18n = getSwitchI18n(Astro.url);
 const home = getUrlI18n(Astro.url);
@@ -128,7 +129,9 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
                     className={`px-0 py-1 ${linkClass} transition-colors duration-300`}
                     prefetch={true}
                   >
-                    <p class={`px-2 py-1 inline-block font-semibold ${linkClass}`}>
+                    <p
+                      class={`px-2 py-1 inline-block font-semibold ${linkClass}`}
+                    >
                       {link.title}
                     </p>
                   </DefaultA>
@@ -165,7 +168,9 @@ const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
               className="block px-2 py-1 transition-colors duration-300"
               prefetch={true}
             >
-              <p class={`px-2 py-1 inline-block font-semibold ${likMobileClass}`}>
+              <p
+                class={`px-2 py-1 inline-block font-semibold ${likMobileClass}`}
+              >
                 {link.title}
               </p>
             </DefaultA>

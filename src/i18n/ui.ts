@@ -1,14 +1,16 @@
 import en from "./en.ts";
 import es from "./es.ts";
 
-export const languages = {
+const languages = {
   en: "English",
   es: "Español",
 };
 
-export const defaultLang = "en";
+const defaultLang = "en";
 
-export const ui = {
+const ui = {
   en,
   es,
 } as const;
+
+export { languages, defaultLang, ui };

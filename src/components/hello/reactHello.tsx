@@ -3,7 +3,7 @@ import { useState } from "react";
 /**
  * Component for rendering a counter with React.js.
  */
-export const ReactHello = () => {
+const ReactHello = () => {
   const [counter, setCounter] = useState(0);
   return (
     <div className="">
@@ -27,3 +27,5 @@ export const ReactHello = () => {
     </div>
   );
 };
+
+export default ReactHello;
