@@ -1,3 +1,3 @@
-import typeHello from "./components/hello/typeHello.js";
+import defaultHello from "@/src/components/ts/hello/default";
 
-console.log(typeHello("in CLI"));
+console.log(defaultHello("in CLI"));

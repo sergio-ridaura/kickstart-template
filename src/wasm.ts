@@ -1,4 +1,3 @@
-// @ts-ignore
-export function add(a: i32, b: i32): i32 {
-  return a + b;
-}
+import defaultHelloWasm from "@/src/components/wasm/hello/default";
+
+export default defaultHelloWasm;

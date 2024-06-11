@@ -1,0 +1,95 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import {
+  PUBLIC_DEV_AUTHOR_NAME,
+  PUBLIC_DEV_AUTHOR_URL,
+  PUBLIC_DEV_AUTHOR_EMAIL,
+  PUBLIC_SITE_TITLE,
+  PUBLIC_SITE_DESCRIPTION,
+  PUBLIC_SITE_KEYWORDS,
+  PUBLIC_DEV_VERSION,
+  PUBLIC_SITE_BACKGROUND_COLOR,
+  PUBLIC_SITE_THEME_COLOR,
+} from "@/src/consts";
+import getFormattedDate from "@/src/components/ts/date/getFormatted";
+
+const developer = `${PUBLIC_DEV_AUTHOR_NAME} ${PUBLIC_DEV_AUTHOR_URL} ${PUBLIC_DEV_AUTHOR_EMAIL}`;
+
+interface Props {
+  lang?: string;
+  title?: string;
+  author?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+}
+
+/**
+ * Component for rendering a head with Astro.
+ */
+const {
+  lang = Astro.currentLocale,
+  title = PUBLIC_SITE_TITLE,
+  author = developer,
+  description = PUBLIC_SITE_DESCRIPTION,
+  keywords = PUBLIC_SITE_KEYWORDS.join(", "),
+  image = "/images/default-placeholder.jpeg",
+} = Astro.props;
+
+const socialImageURL = new URL(image, Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>{title}</title>
+    <meta name="version" content={PUBLIC_DEV_VERSION} />
+    <meta name="author" content={author} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="developer" content={developer} />
+    <meta
+      name="template"
+      content="https://github.com/sergio-ridaura/kickstart-template"
+    />
+    <meta name="build" content={String(getFormattedDate())} />
+    <meta name="robots" content="index, follow" />
+    <meta name="background_color" content={PUBLIC_SITE_BACKGROUND_COLOR} />
+    <meta name="theme-color" content={PUBLIC_SITE_THEME_COLOR} />
+    <ViewTransitions />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () =>
+          navigator.serviceWorker.register("/sw.js")
+        );
+      }
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

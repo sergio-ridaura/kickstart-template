@@ -1,0 +1,102 @@
+---
+import { PUBLIC_SITE_AUTHOR_NAME } from "@/src/consts";
+import getYear from "@/src/components/ts/year/get";
+import randomArray from "@/src/components/ts/array/random";
+import DefaultA from "@/src/components/astro/a/default.astro";
+
+interface LinkType {
+  title: string;
+  url: string;
+}
+
+interface Props {
+  author?: string;
+  links?: LinkType[];
+  color?:
+    | "gray"
+    | "red"
+    | "green"
+    | "blue"
+    | "cyan"
+    | "magenta"
+    | "yellow"
+    | "orange"
+    | "pink"
+    | "purple"
+    | "random";
+}
+
+/**
+ * Component for rendering a footer with Astro.
+ */
+const {
+  author = PUBLIC_SITE_AUTHOR_NAME,
+  links,
+  color = "random",
+} = Astro.props;
+
+let selectColor;
+
+if (color === "random") {
+  const colors = [
+    "gray",
+    "red",
+    "green",
+    "blue",
+    "cyan",
+    "magenta",
+    "yellow",
+    "orange",
+    "pink",
+    "purple",
+  ];
+
+  selectColor = randomArray(colors);
+} else {
+  selectColor = color;
+}
+
+const hrClass = `border-${selectColor}-500`;
+const pClass = `text-${selectColor}-400`;
+const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+
+/* const tailwind = [
+  "border-gray-500 text-gray-400 text-gray-500 hover:text-gray-500",
+  "border-red-500 text-red-400 text-red-500 hover:text-red-500",
+  "border-green-500 text-green-400 text-green-500 hover:text-green-500",
+  "border-blue-500 text-blue-400 text-blue-500 hover:text-blue-500",
+  "border-cyan-500 text-cyan-400 text-cyan-500 hover:text-cyan-500",
+  "border-magenta-500 text-magenta-400 text-magenta-500 hover:text-magenta-500",
+  "border-yellow-500 text-yellow-400 text-yellow-500 hover:text-yellow-500",
+  "border-orange-500 text-orange-400 text-orange-500 hover:text-orange-500",
+  "border-pink-500 text-pink-400 text-pink-500 hover:text-pink-500",
+  "border-purple-500 text-purple-400 text-purple-500 hover:text-purple-500",
+];*/
+---
+
+<div class="container py-6 mx-auto">
+  <hr class={`my-6 ${hrClass}`} />
+
+  <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+    <p class={`mt-4 font-semibold ${pClass}`}>
+      © Copyright {getYear()}. {author}.
+    </p>
+
+    <div class="flex mt-4">
+      {
+        links &&
+          links.length > 0 &&
+          links.map((link) => (
+            <DefaultA
+              title={link.title}
+              url={link.url}
+              className={`mx-2 font-semibold ${linkClass} transition-colors duration-300`}
+              prefetch={true}
+            >
+              {link.title}
+            </DefaultA>
+          ))
+      }
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
 ---
-import capitalizeFirstString from "@cmp/string/capitalize";
-import Footer from "@cmp/footer/colors.astro";
-import Nav from "@cmp/nav/colors.astro";
-import Layout from "@cmp/head/default.astro";
-import getUrlI18n from "@cmp/i18n/getUrl";
-import translateI18n from "@cmp/i18n/translate";
+import capitalizeFirstString from "@/src/components/ts/string/capitalize";
+import Footer from "@/src/components/astro/footer/colors.astro";
+import Nav from "@/src/components/astro/nav/colors.astro";
+import Layout from "@/src/components/astro/head/default.astro";
+import getUrlI18n from "@/src/components/astro/i18n/getUrl";
+import translateI18n from "@/src/components/astro/i18n/translate";
 
 const url = getUrlI18n(Astro.url);
 const i18n = translateI18n(Astro.url);

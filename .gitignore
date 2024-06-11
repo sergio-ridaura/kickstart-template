@@ -1,11 +1,12 @@
 .astro/
 .DS_Store
 .env
-.vercel
 .netlify
+.vercel
 dist/
 node_modules/
 npm-debug.log*
 pnpm-debug.log*
+temp/
 yarn-debug.log*
 yarn-error.log*

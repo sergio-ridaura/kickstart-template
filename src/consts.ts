@@ -1,5 +1,5 @@
 import pkg from "@/package.json";
-import { languages, defaultLang } from "@src/i18n/ui"
+import { languages, defaultLang } from "@/src/i18n/ui"
 
 export const PUBLIC_SITE_TITLE= import.meta.env.PUBLIC_SITE_TITLE || pkg.title;
 export const PUBLIC_SITE_DESCRIPTION=import.meta.env.PUBLIC_SITE_DESCRIPTION || pkg.description;
@@ -23,4 +23,3 @@ export const PUBLIC_DEV_AUTHOR_URL=pkg.author.url;
 export const PUBLIC_DEV_AUTHOR_EMAIL=pkg.author.email;
 export const PUBLIC_DEV_KEYWORDS=pkg.keywords;
 export const PUBLIC_DEV_VERSION=pkg.version;
-

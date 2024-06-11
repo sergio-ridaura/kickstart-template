@@ -1,5 +1,5 @@
-import en from "./en.ts";
-import es from "./es.ts";
+import en from "@/src/i18n/en.ts";
+import es from "@/src/i18n/es.ts";
 
 const languages = {
   en: "English",

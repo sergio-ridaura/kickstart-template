@@ -1,0 +1,201 @@
+---
+import { PUBLIC_SITE_TITLE } from "@/src/consts";
+import DefaultA from "@/src/components/astro/a/default.astro";
+import getSwitchI18n from "@/src/components/astro/i18n/getSwitch";
+import getUrlI18n from "@/src/components/astro/i18n/getUrl";
+import randomArray from "@/src/components/ts/array/random";
+
+const switchI18n = getSwitchI18n(Astro.url);
+const home = getUrlI18n(Astro.url);
+
+interface LinkType {
+  title: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  links?: LinkType[];
+  color?:
+    | "gray"
+    | "red"
+    | "green"
+    | "blue"
+    | "cyan"
+    | "magenta"
+    | "yellow"
+    | "orange"
+    | "pink"
+    | "purple"
+    | "random";
+}
+
+/**
+ * Component for rendering a nav with Astro.
+ */
+const { title = PUBLIC_SITE_TITLE, links, color = "random" } = Astro.props;
+
+let selectColor;
+
+if (color === "random") {
+  const colors = [
+    "gray",
+    "red",
+    "green",
+    "blue",
+    "cyan",
+    "magenta",
+    "yellow",
+    "orange",
+    "pink",
+    "purple",
+  ];
+
+  selectColor = randomArray(colors);
+} else {
+  selectColor = color;
+}
+
+const titleClass = `text-${selectColor}-500`;
+const linkClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+const hrClass = `border-${selectColor}-500`;
+const buttonMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+const likMobileClass = `text-${selectColor}-400 hover:text-${selectColor}-500`;
+
+/* const tailwind = [
+  "border-gray-500 text-gray-400 text-gray-500 hover:text-gray-500",
+  "border-red-500 text-red-400 text-red-500 hover:text-red-500",
+  "border-green-500 text-green-400 text-green-500 hover:text-green-500",
+  "border-blue-500 text-blue-400 text-blue-500 hover:text-blue-500",
+  "border-cyan-500 text-cyan-400 text-cyan-500 hover:text-cyan-500",
+  "border-magenta-500 text-magenta-400 text-magenta-500 hover:text-magenta-500",
+  "border-yellow-500 text-yellow-400 text-yellow-500 hover:text-yellow-500",
+  "border-orange-500 text-orange-400 text-orange-500 hover:text-orange-500",
+  "border-pink-500 text-pink-400 text-pink-500 hover:text-pink-500",
+  "border-purple-500 text-purple-400 text-purple-500 hover:text-purple-500",
+];*/
+---
+
+<nav>
+  <div class="container py-3 mx-auto">
+    <div class="relative flex h-16 items-center">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button
+          type="button"
+          class={`relative inline-flex items-center justify-center rounded-md p-4 ${buttonMobileClass}`}
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="mobile-menu"
+          onclick="toggleMenu()"
+        >
+          <span class="absolute -inset-0.5"></span>
+          <svg
+            class="block h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+      >
+        <DefaultA
+          title={title}
+          url={`${home}/`}
+          className={`py-1 pl-8 sm:pl-0 text-2xl font-bold ${titleClass}`}
+          prefetch={true}
+        >
+          {title}
+        </DefaultA>
+      </div>
+      <div class="relative ml-3">
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-1">
+            {
+              links &&
+                links.length > 0 &&
+                links.map((link) => (
+                  <DefaultA
+                    title={link.title}
+                    url={link.url}
+                    className={`px-0 py-1 ${linkClass} transition-colors duration-300`}
+                    prefetch={true}
+                  >
+                    <p
+                      class={`px-2 py-1 inline-block font-semibold ${linkClass}`}
+                    >
+                      {link.title}
+                    </p>
+                  </DefaultA>
+                ))
+            }
+            <DefaultA
+              title="switchI18n"
+              url={`${switchI18n?.url}`}
+              className={`px-0 py-1 pl-8 ${linkClass} transition-colors duration-300`}
+              prefetch={true}
+            >
+              <p
+                class={`px-2 py-1 text-sm border rounded-xl inline-block font-semibold ${hrClass} ${linkClass}`}
+              >
+                {switchI18n?.label}
+              </p>
+            </DefaultA>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class={`mt-4 mb-3 ${hrClass}`} />
+  </div>
+
+  <div class="sm:hidden hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-8">
+      {
+        links &&
+          links.length > 0 &&
+          links.map((link) => (
+            <DefaultA
+              title={link.title}
+              url={link.url}
+              className="block px-2 py-1 transition-colors duration-300"
+              prefetch={true}
+            >
+              <p
+                class={`px-2 py-1 inline-block font-semibold ${likMobileClass}`}
+              >
+                {link.title}
+              </p>
+            </DefaultA>
+          ))
+      }
+      <DefaultA
+        title="switchI18n"
+        url={`${switchI18n?.url}`}
+        className={`block px-4 py-1 ${likMobileClass} transition-colors duration-300`}
+        prefetch={true}
+      >
+        <p
+          class={`px-2 py-1 text-sm border rounded-xl inline-block font-semibold ${hrClass} ${likMobileClass}`}
+        >
+          {switchI18n?.label}
+        </p>
+      </DefaultA>
+    </div>
+    <hr class={`pt-5 ${hrClass}`} />
+  </div>
+</nav>
+
+<script is:inline>
+  function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    menu?.classList.toggle("hidden");
+  }
+</script>
