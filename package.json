@@ -24,15 +24,21 @@
   "scripts": {
     "clean": "rm -R dist .astro .netlify",
     "dev": "npm run clean; astro telemetry disable; astro dev --host",
-    "build": "npm run clean; astro telemetry disable; astro check && astro build",
-    "preview": "astro preview --host",
+    "build": "npm run clean; astro telemetry disable; npx dotenv-cli -e .env.prod -- astro check && astro build",
+    "build:local": "npm run clean; astro telemetry disable; npx dotenv-cli -e .env.local -- astro check && astro build",
+    "preview": "HOST=0.0.0.0 PORT=80 node ./dist/server/entry.mjs",
+    "preview:static": "astro preview --host",
     "start": "npm run preview",
+    "start:static": "npm run preview:static",
     "astro": "astro",
-    "update": "npm i @astrojs/check astro typescript "
+    "update": "npm i @astrojs/check @astrojs/node astro dotenv dotenv-cli typescript "
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
+    "@astrojs/node": "^8.3.0",
     "astro": "^4.10.2",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "typescript": "^5.4.5"
   }
 }
