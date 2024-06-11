@@ -158,18 +158,6 @@ PUBLIC_ADAPTER=netlify
 
 Private environment variables must be managed from the [Netlity](https://www.netlify.com/) tools.
 
-## Deploy in Vercel
-
-Adapt the `.env` and `.env.prod` file to your site.
-
-```console
-PUBLIC_SITE=https://kickstart-template-demo.vercel.app/
-PUBLIC_DOMAIN=kickstart-template-demo.vercel.app
-PUBLIC_ADAPTER=vercel
-```
-
-Private environment variables must be managed from the [Vercel](https://vercel.com/) tools.
-
 ## Author
 
 Full stack developer: TypeScript, AssemblyScript, Astro, React, Tailwind, Node and MySQL.

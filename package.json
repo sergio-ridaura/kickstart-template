@@ -1,0 +1,38 @@
+{
+  "name": "kickstart-template",
+  "title": "Kickstart template",
+  "version": "4.10.2",
+  "description": "Kickstart template for my website developments.",
+  "keywords": [
+    "assemblyscript",
+    "astro",
+    "cli",
+    "modules",
+    "mysql",
+    "node",
+    "react",
+    "tailwind",
+    "typescript"
+  ],
+  "author": {
+    "name": "Sergio Ridaura",
+    "url": "https://github.com/sergio-ridaura",
+    "email": "sergio.ridaura@outlook.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -R dist .astro .netlify",
+    "dev": "npm run clean; astro telemetry disable; astro dev --host",
+    "build": "npm run clean; astro telemetry disable; astro check && astro build",
+    "preview": "astro preview --host",
+    "start": "npm run preview",
+    "astro": "astro",
+    "update": "npm i @astrojs/check astro typescript "
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "astro": "^4.10.2",
+    "typescript": "^5.4.5"
+  }
+}
