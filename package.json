@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "4.10.2",
+  "version": "4.11.2",
   "description": "Kickstart template for my website developments.",
   "keywords": [
     "assemblyscript",
@@ -21,6 +21,17 @@
   },
   "license": "MIT",
   "type": "module",
+  "main": "./src/packages.js",
+  "bin": {
+    "kickstart-template": "./dist/server/cli.js"
+  },
+  "exports": {
+    ".": "./src/packages.ts"
+  },
+  "files": [
+    "./src/packages.ts",
+    "./src/components"
+  ],
   "scripts": {
     "clean": "rm -R dist .astro .netlify",
     "dev": "npm run clean; astro telemetry disable; astro dev --host",
@@ -35,11 +46,13 @@
     "start:static": "npm run preview:static",
     "start:cli": "npm run preview:cli",
     "astro": "astro",
-    "update": "npm i @astrojs/check @astrojs/node astro dotenv dotenv-cli typescript "
+    "prepublishOnly": "",
+    "update": "npm i @astrojs/check @astrojs/node @types/node astro dotenv dotenv-cli typescript "
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/node": "^8.3.0",
+    "@types/node": "^20.14.2",
     "astro": "^4.10.2",
     "dotenv": "^16.4.5",
     "dotenv-cli": "^7.4.2",
