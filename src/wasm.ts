@@ -1,3 +1,3 @@
-import defaultHelloWasm from "@/src/components/wasm/hello/default";
+import defaultHelloWasm from "./components/wasm/hello/default";
 
 export default defaultHelloWasm;

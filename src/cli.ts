@@ -1,5 +1,3 @@
-import defaultHello from "@/src/components/ts/hello/default";
-import getYearEgb from "@/src/components/ts/egb/getYear";
+import defaultHello from "./components/ts/hello/default.js";
 
 console.log(defaultHello("in CLI"));
-console.log(getYearEgb(1976, 2));

@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    },
+    }
   },
+  "include": ["./src/*"],
+  "exclude": ["./src/components/wasm"]
 }

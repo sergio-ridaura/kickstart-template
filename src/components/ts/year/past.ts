@@ -1,4 +1,4 @@
-import getYear from "@/src/components/ts/year/get";
+import getYear from "./get.js";
 
 /**
  * Calculates the number of past years between two years.

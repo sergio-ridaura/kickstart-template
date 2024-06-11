@@ -1,7 +1,7 @@
 import {
   getAgeEgbWasm,
   type GetAgeEgbWasmType,
-} from "@/components/wasm/egb/getAge";
+} from "./getAge";
 
 /**
  * Calculates the year a person started grade EGB (Educación General Básica) based on birth year and grade.

@@ -1,4 +1,4 @@
-import { getAgeEgb, type GetAgeEgbType } from "@/src/components/ts/egb/getAge";
+import { getAgeEgb, type GetAgeEgbType } from "./../egb/getAge.js";
 
 /**
  * Calculates the year a person started grade EGB (Educación General Básica) based on birth year and grade.

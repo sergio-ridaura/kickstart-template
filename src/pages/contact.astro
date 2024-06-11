@@ -2,6 +2,8 @@
 export const prerender = true;
 
 import Layout from "@/src/layouts/index.astro";
+import defaultHelloWasm from "@/public/wasm/release.js";
+console.log(defaultHelloWasm(1,1))
 ---
 
 <Layout>
