@@ -1,6 +1,7 @@
 export const prerender = true;
+
 import type { APIRoute } from "astro";
-import { PUBLIC_SITE_URL } from "@src/consts";
+import { PUBLIC_SITE_URL } from "@/src/consts";
 
 const robotsTxt = `
 User-agent: *

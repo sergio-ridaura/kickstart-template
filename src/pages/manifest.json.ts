@@ -1,11 +1,12 @@
 export const prerender = true;
+
 import type { APIRoute } from "astro";
 import {
   PUBLIC_SITE_TITLE,
   PUBLIC_SITE_DESCRIPTION,
   PUBLIC_SITE_BACKGROUND_COLOR,
   PUBLIC_SITE_THEME_COLOR,
-} from "@src/consts";
+} from "@/src/consts";
 
 const manifestTxt = `{
   "name": "${PUBLIC_SITE_TITLE}",

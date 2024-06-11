@@ -11,17 +11,17 @@ import {
   PUBLIC_SITE_AUTHOR_NAME,
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
-} from "@src/consts";
-import DefaultA from "@cmp/a/default.astro";
-import DefaultEmail from "@cmp/email/default.astro";
-import pastYears from "@cmp/year/past";
-import getYear from "@cmp/year/get";
-import { getEgbAge } from "@cmp/age/getEgb";
-import getEgbYear from "@cmp/year/getEgb";
+} from "@/src/consts";
+import DefaultA from "@/src/components/astro/a/default.astro";
+import DefaultEmail from "@/src/components/astro/email/default.astro";
+import pastYears from "@/src/components/ts/year/past";
+import getYear from "@/src/components/ts/year/get";
+import { getAgeEgb } from "@/src/components/ts/egb/getAge";
+import getYearEgb from "@/src/components/ts/egb/getYear";
 
 ## Hola, soy Sergio Ridaura
 
-Desde pequeño, siempre me ha fascinado la informática. A los {getEgbAge(5)} años, en {getEgbYear(1976, 5)}, comencé a programar en BASIC en un MSX de Philips VG-8020 de 8 bits.
+Desde pequeño, siempre me ha fascinado la informática. A los {getAgeEgb(5)} años, en {getYearEgb(1976, 5)}, comencé a programar en BASIC en un MSX de Philips VG-8020 de 8 bits.
 
 A lo largo de mis {pastYears(getYear(), 1997)} años de experiencia, he trabajado en el desarrollo de aplicaciones y sitios web, en multiples sectores como la sanidad, la educación, el energético, la publicidad, la banca, entre otros.
 

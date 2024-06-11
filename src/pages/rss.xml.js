@@ -1,7 +1,8 @@
 export const prerender = true;
+
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { PUBLIC_SITE_TITLE, PUBLIC_SITE_DESCRIPTION, PUBLIC_SITE_LANG_DEFAULT } from "@src/consts";
+import { PUBLIC_SITE_TITLE, PUBLIC_SITE_DESCRIPTION, PUBLIC_SITE_LANG_DEFAULT } from "@/src/consts";
 
 const globals = await getCollection("globals");
 const posts = await getCollection("documentation");

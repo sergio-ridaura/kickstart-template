@@ -11,17 +11,17 @@ import {
   PUBLIC_SITE_AUTHOR_NAME,
   PUBLIC_SITE_AUTHOR_URL,
   PUBLIC_SITE_AUTHOR_EMAIL,
-} from "@src/consts";
-import DefaultA from "@cmp/a/default.astro";
-import DefaultEmail from "@cmp/email/default.astro";
-import pastYears from "@cmp/year/past";
-import getYear from "@cmp/year/get";
-import { getEgbAge } from "@cmp/age/getEgb";
-import getEgbYear from "@cmp/year/getEgb";
+} from "@/src/consts";
+import DefaultA from "@/src/components/astro/a/default.astro";
+import DefaultEmail from "@/src/components/astro/email/default.astro";
+import pastYears from "@/src/components/ts/year/past";
+import getYear from "@/src/components/ts/year/get";
+import { getAgeEgb } from "@/src/components/ts/egb/getAge";
+import getYearEgb from "@/src/components/ts/egb/getYear";
 
 ## Hello, I am Sergio Ridaura
 
-Since I was a child, I have always been fascinated by computing. At the age of {getEgbAge(5)}, in {getEgbYear(1976, 5)}, I started programming in BASIC on a Philips VG-8020 8-bit MSX.
+Since I was a child, I have always been fascinated by computing. At the age of {getAgeEgb(5)}, in {getYearEgb(1976, 5)}, I started programming in BASIC on a Philips VG-8020 8-bit MSX.
 
 Throughout my {pastYears(getYear(), 1997)} years of experience, I have worked on developing desktop and web applications across multiple sectors such as healthcare, education, energy, advertising, banking and more.
 

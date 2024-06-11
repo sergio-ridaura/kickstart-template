@@ -1,7 +1,9 @@
 ---
 export const prerender = true;
-import Layout from "@src/layouts/page.astro";
+
+import Layout from "@/src/layouts/page.astro";
 import { getEntry } from "astro:content";
+
 const entry = await getEntry("globals", "privacy-policy");
 ---
 

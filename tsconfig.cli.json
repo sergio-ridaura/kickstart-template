@@ -10,9 +10,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@src/*": ["./src/*"],
-      "@cmp/*": ["./src/components/*"],
-      "@pbl/*": ["./public/*"]
     }
   },
   "include": ["src/cli.ts"]

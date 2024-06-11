@@ -1,6 +1,7 @@
 export const prerender = true;
+
 import type { APIRoute } from "astro";
-import { PUBLIC_DEV_VERSION } from "@src/consts";
+import { PUBLIC_DEV_VERSION } from "@/src/consts";
 
 const serviceWorker = `
 self.addEventListener("install", (event) => {
