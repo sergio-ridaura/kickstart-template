@@ -3,7 +3,11 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2020",
-    "outDir": "./dist/server"
+    "outDir": "./dist/server",
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "rootDir": "."
   },
-  "include": ["src/cli.ts"]
+  "include": ["src/cli.ts", "src/exports.ts", "src/components/ts"]
 }

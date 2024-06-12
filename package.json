@@ -25,11 +25,16 @@
     "kickstart-template": "./dist/server/cli.js"
   },
   "exports": {
-    ".": "./src/exports.ts"
+    ".": "./dist/server/src/exports.js"
   },
   "files": [
-    "./src/exports.ts",
-    "./src/components"
+    "./dist/server/src/components",
+    "./dist/server/src/exports.d.ts",
+    "./dist/server/src/exports.js",
+    "./dist/server/cli.d.ts",
+    "./dist/server/src/exports.js.map",
+    "./dist/server/cli.js",
+    "./dist/server/cli.js.map"
   ],
   "scripts": {
     "clean": "rm -R dist .astro .netlify",
@@ -46,7 +51,7 @@
     "start:cli": "npm run preview:cli",
     "astro": "astro",
     "prepublishOnly": "",
-    "update": "npm i @astrojs/check @astrojs/node @types/node astro dotenv dotenv-cli typescript "
+    "update": "npm i @astrojs/check @astrojs/node @types/node astro dotenv dotenv-cli typescript"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
