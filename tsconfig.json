@@ -1,3 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "exclude": ["src/wasm.ts", "./src/components/wasm"],
+  "include": ["./src/*"],
 }

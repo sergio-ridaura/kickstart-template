@@ -1,4 +1,8 @@
 ---
+// export const prerender = true;
+
+import { defaultHelloWasm } from "./../../public/wasm/release.js";
+console.log(defaultHelloWasm(1,1))
 
 ---
 
@@ -12,5 +16,9 @@
   </head>
   <body>
     <h1>Astro</h1>
+<script type="module" is:inline>
+  import { defaultHelloWasm } from "./wasm/release.js";
+  document.body.innerText = defaultHelloWasm(1, 2);console.log(defaultHelloWasm(1,1))
+  </script>
   </body>
 </html>
