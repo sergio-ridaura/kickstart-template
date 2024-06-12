@@ -1,9 +1,0 @@
-export { default as isAdultAge } from "./components/ts/age/isAdult";
-export { default as randomArray } from "./components/ts/array/random";
-export { default as getFormattedDate } from "./components/ts/date/getFormatted";
-export { getAgeEgb, type GetAgeEgbType } from "./components/ts/egb/getAge";
-export { default as getYearEgb } from "./components/ts/egb/getYear";
-export { default as defaultHello } from "./components/ts/hello/default";
-export { default as capitalizeFirstString } from "./components/ts/string/capitalize";
-export { default as getYear } from "./components/ts/year/get";
-export { default as pastYears } from "./components/ts/year/past";

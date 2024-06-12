@@ -1,7 +1,7 @@
 {
   "name": "kickstart-template",
   "title": "Kickstart template",
-  "version": "4.11.2",
+  "version": "4.10.2",
   "description": "Kickstart template for my website developments.",
   "keywords": [
     "assemblyscript",
@@ -21,15 +21,14 @@
   },
   "license": "MIT",
   "type": "module",
-  "main": "./src/packages.js",
   "bin": {
     "kickstart-template": "./dist/server/cli.js"
   },
   "exports": {
-    ".": "./src/packages.ts"
+    ".": "./src/exports.ts"
   },
   "files": [
-    "./src/packages.ts",
+    "./src/exports.ts",
     "./src/components"
   ],
   "scripts": {
